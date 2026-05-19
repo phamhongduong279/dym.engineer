@@ -160,7 +160,7 @@ img {
 }
 
 .menu-dropdown a {
-    font-family: "League Spartan", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-size: 22px;
     letter-spacing: .08em;
     opacity: .88;
@@ -219,7 +219,7 @@ img {
 }
 
 .btn-main i {
-    font-family: "League Spartan", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-style: italic;
     font-weight: 700;
     font-size: 17px;
@@ -237,7 +237,7 @@ img {
 
 /* ===== COMMON DECORATION ===== */
 .section-title {
-    font-family: "", "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-size: 44px;
     line-height: 1.45;
     letter-spacing: .16em;
@@ -255,7 +255,7 @@ img {
 .eyebrow,
 .entry-label,
 .work-kicker {
-    font-family: "League Spartan", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     letter-spacing: .18em;
     font-weight: 700;
 }
@@ -343,7 +343,7 @@ img {
     right: -20px;
     z-index: 1;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 80px;
     line-height: .9;
     font-weight: 300;
@@ -452,7 +452,7 @@ img {
 .job-nav span {
     display: block;
 
-    font-family: "League Spartan", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-size: 42px;
     font-style: italic;
     font-weight: 500;
@@ -567,7 +567,7 @@ img {
 .entry-label {
     display: block;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: clamp(150px, 14vw, 220px);
     line-height: .76;
     letter-spacing: -0.085em;
@@ -707,7 +707,7 @@ img {
     left: -153px;
     top: -42px;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 96px;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -722,7 +722,7 @@ img {
     left: -130px;
     top: -42px;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 96px;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -737,7 +737,7 @@ img {
     left: 10px;
     top: -42px;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 96px;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -752,7 +752,7 @@ img {
     left: -130px;
     top: -42px;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 96px;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -1105,7 +1105,7 @@ img {
     flex-shrink: 0;
     width: 110px;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 108px;
     line-height: .9;
     color: #fff;
@@ -1155,7 +1155,7 @@ img {
 
 .work-side-title span {
     display: block;
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
     font-size: 138px;
     line-height: .82;
     letter-spacing: -0.08em;
@@ -1251,7 +1251,7 @@ img {
 .designer-label {
     display: block;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
 
     font-size: clamp(150px, 14vw, 220px);
 
@@ -1271,7 +1271,7 @@ img {
 .designer-label1 {
     display: block;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Noto Sans JP", serif;
 
     font-size: clamp(150px, 14vw, 220px);
 
@@ -1295,6 +1295,7 @@ img {
 
     transform: translateY(-90px);
 }
+
 .designer-actions a {
     position: relative;
 
@@ -1310,7 +1311,7 @@ img {
 
     color: #fff;
 
-    font-family: "League Spartan", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-size: 24px;
     font-style: italic;
     line-height: 1;
@@ -1393,90 +1394,562 @@ img {
     color: #fff;
 }
 
-/* ===== NEWS ===== */
-.news-section {
-    padding: 96px 0 110px;
-    background: linear-gradient(180deg, rgba(0, 169, 255, .08), transparent);
+/* =========================
+   CEO MESSAGE
+========================= */
+.ceo-message-section {
+    position: relative;
+    z-index: 5;
+
+    height: 620px;
+
+    margin-top: -200px;
+    padding: 0;
+
+    background: #04052B;
+    overflow: visible;
 }
 
+/* background image layer */
+.ceo-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 500px;
+
+    background:
+        linear-gradient(rgba(4, 5, 43, .48),
+            rgba(4, 5, 43, .58)),
+        url("../image/bg_footer.webp") center top / cover no-repeat;
+
+    border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+
+    z-index: 1;
+}
+
+/* content vượt lên trên bg */
+.ceo-message-inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(1280px, 92%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 82% 18%;
+    align-items: start;
+
+    /* đây là phần đẩy content vượt top ảnh */
+    transform: translateY(70px);
+}
+
+/* LEFT */
+.ceo-left {
+    position: relative;
+}
+
+.ceo-en {
+    position: relative;
+    z-index: 3;
+
+    margin: 0 0 -34px 0;
+
+    font-family: "Noto Sans JP", serif;
+    font-size: 120px;
+    line-height: .9;
+    font-weight: 400;
+    letter-spacing: -0.08em;
+
+    color: rgba(0, 166, 232, .58);
+}
+
+.ceo-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(1000px, 100%);
+    height: 340px;
+
+    background: #e5e5e5;
+    border-radius: 20px;
+}
+
+.ceo-more-btn {
+    position: relative;
+    z-index: 3;
+
+    width: 260px;
+    height: 42px;
+
+    margin: 34px 0 0 400px;
+
+    border: 1px solid rgba(255, 255, 255, .55);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    color: #fff;
+
+    font-family: "Noto Sans JP", sans-serif;
+    font-style: italic;
+    font-size: 17px;
+}
+
+/* RIGHT */
+.ceo-right {
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 24px;
+
+    /* ngang với chữ CEO Message */
+    padding-top: 4px;
+    margin-left: -52px;
+}
+
+.ceo-right p {
+    margin: 0;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    font-size: 60px;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: .12em;
+    font-family: "Noto Sans JP", serif;
+
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, .45);
+}
+
+.ceo-right .ceo-dym {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: .08em;
+}
+
+/* =========================
+   NEWS
+========================= */
+.news-section {
+    position: relative;
+    padding: 90px 0 110px;
+
+    background:
+        linear-gradient(rgba(4, 5, 43, .58),
+            rgba(4, 5, 43, .72)),
+        url("../image/bg_footer.webp") center center / cover no-repeat;
+}
+
+.news-inner {
+    width: min(1280px, 92%);
+    margin: 0 auto;
+}
+
+.news-top {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 56px;
+}
+
+/* heading row */
+.news-heading {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    margin-bottom: 34px;
+}
+
+/* big News */
+.news-heading-en {
+    position: relative;
+
+    font-family: "Noto Sans JP", serif;
+    font-size: 150px;
+    line-height: .82;
+    letter-spacing: -0.08em;
+
+    color: rgba(255, 255, 255, .42);
+}
+
+/* お知らせ */
+.news-heading h2 {
+    position: absolute;
+
+    left: 350px;
+    top: 95px;
+
+    margin: 0;
+
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .18em;
+
+    color: #fff;
+}
+
+
+
+/* tabs */
 .news-tabs {
     display: flex;
     justify-content: center;
-    gap: 28px;
-    margin: 26px 0 48px;
+    gap: 12px;
+
+    margin-bottom: 46px;
 }
 
-.news-tabs li {
-    color: var(--muted);
-    font-size: 14px;
-}
+.news-tabs button {
+    min-width: 150px;
+    height: 40px;
+    padding: 0 18px;
 
-.news-tabs .active {
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(180deg, #27b9ff 0%, #008ed8 100%);
     color: #fff;
+
+    font-size: 12px;
     font-weight: 700;
+    letter-spacing: .04em;
+
+    cursor: pointer;
 }
 
+/* list */
 .news-list {
-    display: grid;
-    gap: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
 }
 
-.news-card {
+.news-item {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 38px;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, .16);
-    padding-bottom: 34px;
+    grid-template-columns: 42% 58%;
+    column-gap: 36px;
+    align-items: start;
 }
 
 .news-thumb {
-    height: 170px;
-    border-radius: 6px;
-    margin: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(0, 169, 255, .22));
+    width: 100%;
+    height: 320px;
+
+    background: #e5e5e5;
+    border-radius: 18px;
 }
 
-.news-card h3 {
-    font-family: "", "Noto Sans JP", sans-serif;
-    font-size: 25px;
-    letter-spacing: .14em;
-    line-height: 1.75;
-    font-weight: 400;
-    margin: 0 0 8px;
+.news-content {
+    color: #fff;
+    padding-top: 4px;
+}
+
+.news-content h3 {
+    margin: 0 0 16px;
+
+    font-size: 22px;
+    line-height: 1.55;
+    font-weight: 800;
+    letter-spacing: .12em;
 }
 
 .news-meta {
-    color: #77dfff;
-    font-size: 13px;
-    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 18px;
 }
 
-.news-card p:last-child {
-    color: var(--muted);
-    line-height: 1.9;
+.news-meta span {
+    min-width: 88px;
+    height: 26px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #00a7e8;
+    color: #00a7e8;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.news-meta time {
+    color: #00a7e8;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.news-content p {
     margin: 0;
+
+    font-size: 12px;
+    line-height: 2;
+    font-weight: 700;
+    letter-spacing: .04em;
 }
 
-.news-section .vision-cta {
-    text-align: center;
-    margin-top: 48px;
-}
+/* more */
+.news-more-btn {
+    position: relative;
 
-/* ===== RECRUIT / FOOTER ===== */
-.recruit {
+    width: 300px;
+    height: 42px;
+
+    margin: 48px auto 0;
+
+    border: 1px solid rgba(255, 255, 255, .55);
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    color: #fff;
+
     overflow: hidden;
+    transition: .28s ease;
+}
+
+/* hover */
+.news-more-btn:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+/* text */
+.news-more-btn span,
+.news-more-btn small {
+    transition: .28s ease;
+}
+
+.news-more-btn:hover span,
+.news-more-btn:hover small {
+    color: #04052B;
+}
+
+/* divider */
+.news-more-btn::before {
+    content: "";
+    position: absolute;
+
+    right: 56px;
+    top: 50%;
+
+    width: 1px;
+    height: 52%;
+
+    transform: translateY(-50%);
+
+    background: rgba(255, 255, 255, .45);
+
+    transition: .28s ease;
+}
+
+.news-more-btn:hover::before {
+    background: rgba(4, 5, 43, .22);
+}
+
+/* arrow */
+.news-more-btn::after {
+    content: "";
+    position: absolute;
+
+    right: 24px;
+    top: 50%;
+
+    width: 20px;
+    height: 8px;
+
+    transform: translateY(-50%);
+
+    background: #fff;
+
+    clip-path: polygon(0 42%,
+            72% 42%,
+            72% 8%,
+            100% 50%,
+            72% 92%,
+            72% 58%,
+            0 58%);
+
+    transition: .28s ease;
+}
+
+.news-more-btn:hover::after {
+    background: #04052B;
+}
+
+/* ===== ACHIEVEMENT RESULTS ===== */
+.achievement-block {
+    position: relative;
+    width: min(1280px, 92%);
+    margin: 0 auto 0;
+    padding-bottom: 200px;
+}
+
+.achievement-heading {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    margin: -0 0 58px;
+    margin-bottom: 26px;
+}
+
+.achievement-heading .achievement-heading-en {
+    position: absolute;
+    left: 0;
+    top: -46px;
+
+    font-family: "Noto Sans JP", serif;
+    font-size: 86px;
+    line-height: 1;
+    letter-spacing: -0.07em;
+
+    color: rgba(190, 116, 52, .55);
+}
+
+.achievement-heading .achievement-heading-ja {
+    position: relative;
+    z-index: 2;
+
+    margin-left: 52px;
+    top:-20px;
+
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: .16em;
+
+    color: #fff;
+}
+
+.achievement-heading .achievement-heading-ja::before {
+    content: "";
+    position: absolute;
+    left: -65px;
+    top: -30px;
+
+    width: 5px;
+    height: 78px;
+
+    background: #C77A32;
+}
+
+/* list */
+.achievement-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+/* item */
+.achievement-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    column-gap: 46px;
+    align-items: start;
+}
+
+/* image */
+.achievement-image {
+    width: 100%;
+    height: 340px;
+
+    background: #e5e5e5;
+    border-radius: 24px;
+}
+
+/* content */
+.achievement-content {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.achievement-number {
+    flex-shrink: 0;
+    width: 110px;
+
+    font-family: "Noto Sans JP", serif;
+    font-size: 108px;
+    line-height: .9;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: -0.08em;
+}
+
+.achievement-text {
+    flex: 1;
+    color: #fff;
+    padding-top: 8px;
+}
+
+.achievement-text h4 {
+    margin: 0 0 24px;
+
+    font-size: 42px;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: .18em;
+}
+
+.achievement-text p {
+    margin: 0;
+    margin-left: -130px;
+
+    font-size: 13px;
+    line-height: 2;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+/* recruit */
+.recruit {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+
+    padding-top: 120px;
+    margin-top: 0;
+
+    background: #04052B;
 }
 
 .recruit_bg_wrap {
     min-height: 260px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, .08), rgba(0, 169, 255, .12));
+    background: none;
 }
 
 .recruit_bg_wrap img {
+    display: block;
+
     width: 100%;
-    min-height: 260px;
+    height: 360px;
+
     object-fit: cover;
+    object-position: center top;
 }
 
 footer {
