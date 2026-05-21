@@ -1151,24 +1151,26 @@ small {
     overflow: hidden;
 }
 
-.job__inner{
-  position: relative;
-  width: 1280px;
-  margin: 0 auto;
+.job__inner {
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
 }
 
-.job__plate{
-  position: absolute;
-  left: 0;
-  top: 70%;
-  transform: translateY(-50%);
+.job__plate {
+    position: absolute;
+    left: 0;
+    top: 70%;
+    transform: translateY(-50%);
 
-  width: 1280px;   /* always full width */
-  height: auto;    /* keep correct ratio */
+    width: 1280px;
+    /* always full width */
+    height: auto;
+    /* keep correct ratio */
 
-  display: block;
-  pointer-events: none;
-  z-index: 1;
+    display: block;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .job__content {
@@ -1228,73 +1230,712 @@ small {
 
 /* buttons like mock */
 /* 2 buttons = full width of content area */
-.job__actions{
-  margin-top: 22px;
+.job__actions {
+    margin-top: 22px;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 nút chia đều */
-  gap: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 nút chia đều */
+    gap: 18px;
 
-  width: 100%; /* = width của .job__content */
+    width: 100%;
+    /* = width của .job__content */
 }
 
 /* button style like .job-button */
-.jobBtn{
-  position: relative;
-  height: 60px;
+.jobBtn {
+    position: relative;
+    height: 60px;
 
+    border: 1px solid rgba(255, 255, 255, .7);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px 0 36px;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+/* vertical separator line */
+.jobBtn::after {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    right: 64px;
+
+    width: 1px;
+    height: 48px;
+
+    background: rgba(255, 255, 255, .35);
+    transform: translateY(-50%);
+}
+
+/* text */
+.jobBtn__text {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* arrow */
+.jobBtn__arrow {
+    flex-shrink: 0;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* hover */
+.jobBtn:hover {
+    background: #fff;
+    color: #04052B;
+}
+
+.jobBtn:hover::after {
+    background: rgba(4, 5, 43, .18);
+}
+
+/* ===== APPEAL (2 images) ===== */
+.appeal {
+    position: relative;
+
+    /* image #1: whole section bg */
+    background: url("../image/engineer/about.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 78px 0 90px;
+    min-height: 560px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+
+    overflow: hidden;
+}
+
+/* image #2: moon overlay, rotated 180deg */
+.appeal__moon {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    /* put it at the top like mock */
+    top: -6px;
+
+    height: 300px;
+
+    background: url("../image/engineer/voice.webp") no-repeat center top;
+    background-size: contain;
+    /* keep full moon image */
+
+    transform: rotate(180deg);
+    transform-origin: center;
+
+    pointer-events: none;
+    z-index: 1;
+
+    /* optional: blend a bit */
+    opacity: 0.95;
+}
+
+.appeal__inner {
+    position: relative;
+    z-index: 2;
+
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.appeal__head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.appeal__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 78px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, .55),
+        0 0 26px rgba(0, 255, 255, .35);
+}
+
+.appeal__sub {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: rgba(235, 255, 255, .92);
+}
+
+.appeal__body {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* left text block */
+.appeal__text {
+    width: 720px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.1;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .9);
+}
+
+.appeal__text p {
+    margin: 0;
+}
+
+/* right gray rounded card */
+.appeal__card {
+    width: 520px;
+    height: 140px;
+    border-radius: 26px;
+    background: rgba(230, 230, 230, .92);
+}
+
+/* ===== INTERVIEW ===== */
+.interview {
+    background: url("../image/engineer/about.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 86px 0 120px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+}
+
+.interview__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.interview__head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.interview__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, .55),
+        0 0 26px rgba(0, 255, 255, .35);
+}
+
+.interview__sub {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: rgba(235, 255, 255, .92);
+}
+
+/* 4 cards */
+.interview__grid {
+    margin-top: 44px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 44px;
+
+    align-items: start;
+}
+
+.ivCard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* stagger (cái lên cái xuống) */
+.ivCard--up1 {
+    transform: translateY(0px);
+}
+
+.ivCard--down2 {
+    transform: translateY(86px);
+}
+
+.ivCard--up3 {
+    transform: translateY(10px);
+}
+
+.ivCard--down4 {
+    transform: translateY(74px);
+}
+
+/* avatars */
+.ivCard__avatar {
+    background: rgba(255, 255, 255, .92);
+}
+
+.ivCard__avatar--pill {
+    width: 230px;
+    height: 270px;
+    border-radius: 999px;
+}
+
+.ivCard__avatar--round {
+    width: 230px;
+    height: 230px;
+    border-radius: 999px;
+}
+
+/* meta */
+.ivCard__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ivCard__name {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.ivCard__role {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    opacity: .9;
+}
+
+/* circle arrow */
+.ivCard__link {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, .35);
+    color: rgba(255, 255, 255, .86);
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.ivCard__link:hover {
+    border-color: rgba(0, 255, 255, .75);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(0, 255, 255, .35);
+}
+
+.ivCard__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .88);
+}
+
+/* ===== SCHEDULE ===== */
+.schedule {
+    background: url("../image/engineer/schedule.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 80px 0 92px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+}
+
+.schedule__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.schedule__head {
+    position: relative;
+    text-align: center;
+    margin-bottom: 44px;
+}
+
+/* outline big title */
+.schedule__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 92px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1;
+
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, .32);
+    text-stroke: 2px rgba(255, 255, 255, .32);
+
+    opacity: .95;
+}
+
+/* small subtitle in the middle */
+.schedule__sub {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+
+    margin: 0;
+    font-size: 30px;
+    font-weight: 200;
+    letter-spacing: .12em;
+    color: rgba(255, 255, 255, .85);
+}
+
+.schedule__grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 64px;
+
+    align-items: start;
+}
+
+/* left pills */
+.schedule__left {
+    display: grid;
+    gap: 34px;
+}
+
+.schedule__pill {
+    width: 360px;
+    height: 140px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .9);
+}
+
+/* right items */
+.schedule__right {
+    display: grid;
+    gap: 40px;
+    padding-top: 6px;
+}
+
+.scItem__head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.scItem__time {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .92);
+}
+
+.scItem__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .92);
+}
+
+.scItem__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .82);
+    max-width: 640px;
+}
+
+/* ===== VIDEO SECTION (3 parts) ===== */
+.videoSec{
+  padding: 80px 0 90px;
+  font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  color: #fff;
+}
+
+.videoSec__inner{
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---------- Part 1: capsule plate + thumbnail ---------- */
+.videoSec{
+  padding: 120px 0 120px;  
+}
+
+/* P1 wrapper */
+.videoHero{
+  position: relative;
+  aspect-ratio: 1280 / 360;
+  height: auto;
+}
+
+.videoHero__plate{
+  position: absolute;
+  inset: 0;
+  background: url("/assets/image/engineer/cf2b6beefb96a4c5bb6d8303d9e8112775e021a9.webp") no-repeat center center;
+  background-size: cover;
+  border-radius: 220px;
+  transform: scale(0.965);
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.videoHero__content{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 44px;
+  padding: 56px 92px;
+  align-items: center;
+}
+
+.videoHero__thumbWrap{
+  display: flex;
+  align-items: flex-end;
+}
+
+.videoHero__thumb{
+  width: 450px;
+  height: 250px;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,.85);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  background: #fff;
+  margin-left:100px;
+}
+
+.videoHero__text{
+  padding-top: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+.videoHero__big{
+  left: -50px;
+  top:-40px;
+  margin-bottom: 0;
+  line-height: .9;
+  transform: translate(-28px, -6px);
+  font-size: 90px;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  color: #020326;
+}
+
+.videoHero__title{
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.videoHero__desc{
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 2.0;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.88);
+  max-width: 520px;
+}
+
+/* ===== Part 2: 4 egg buttons (FINAL CSS ONLY) ===== */
+.videoNav{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;              /* khoảng cách giữa các quả */
+  align-items: center;
+}
+
+/* clickable area */
+.videoNav__btn{
+  position: relative;
+  height: 150px;          /* nhỏ lại để thoáng */
+  border: 0;
+  background: transparent;
+
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  overflow: visible;
+  transition: .25s ease;
+}
+
+/* 2 layers: TOP tilt LEFT, BOTTOM tilt RIGHT */
+.videoNav__btn::before{
+  content: "";
+  position: absolute;
+
+  /* egg nhỏ hơn để có khoảng cách */
+  inset: -8px 30px;
+
+  /* egg-ish blob */
+  border-radius: 58% 42% 62% 38% / 55% 48% 52% 45%;
+  transform-origin: center;
+
+  transition: .25s ease;
+}
+
+/* TOP layer (tilt LEFT) - default dark */
+.videoNav__btn::before{
+  z-index: 0;
+  background: rgba(8, 26, 45, .55);
+  border: 1px solid rgba(0, 200, 255, .35);
+
+  transform: rotate(-50deg) scale(.92);
+}
+
+
+
+/* keep content above egg */
+.videoNav__btn > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* hover: chuyển xanh và BỎ mờ (cả 2 layer đều rõ) */
+.videoNav__btn:hover{
+  color: #fff;
+}
+
+.videoNav__btn:hover::before{
+  background: linear-gradient(180deg, #16d8ff 0%, #0a61ff 100%);
+  border-color: rgba(0, 220, 255, .95);
+  box-shadow: 0 0 26px rgba(0, 220, 255, .28);
+}
+
+/* text styles */
+.videoNav__icon{
+  font-size: 26px;
+  margin-bottom: 2px;
+  opacity: .95;
+}
+
+.videoNav__en{
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.videoNav__jp{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .10em;
+  opacity: .9;
+}
+
+
+/* ---------- Part 3: 3 buttons (hover => white) like your job-button ---------- */
+.videoJobs{
+  margin-top: 34px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.videoJobs__btn{
+  position: relative;
+
+  height: 72px;
   border: 1px solid rgba(255, 255, 255, .7);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 28px 0 36px;
-
+  padding: 0 28px 0 28px;
   color: #fff;
   text-decoration: none;
 
   transition: .25s ease;
 }
 
-/* vertical separator line */
-.jobBtn::after{
+/* divider */
+.videoJobs__btn::after{
   content: "";
   position: absolute;
-
   top: 50%;
-  right: 64px;
-
+  right: 54px;
   width: 1px;
-  height: 48px;
-
+  height: 42px;
   background: rgba(255, 255, 255, .35);
   transform: translateY(-50%);
 }
 
-/* text */
-.jobBtn__text{
+.videoJobs__content{
+  display: flex;
+  flex-direction: column;
+}
+
+.videoJobs__en{
   font-family: "Noto Sans Japan", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   font-style: italic;
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
 }
 
-/* arrow */
-.jobBtn__arrow{
+.videoJobs__ja{
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.videoJobs__arrow{
   flex-shrink: 0;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
 }
 
-/* hover */
-.jobBtn:hover{
+/* hover => white (same behavior as your job-button) */
+.videoJobs__btn:hover{
   background: #fff;
   color: #04052B;
 }
 
-.jobBtn:hover::after{
+.videoJobs__btn:hover::after,
+.videoJobs__btn.is-active::after{
   background: rgba(4, 5, 43, .18);
 }
