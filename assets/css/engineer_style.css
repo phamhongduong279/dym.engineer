@@ -1,0 +1,1300 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=League+Spartan:wght@400;600;700;800&family=Dela+Gothic+One&display=swap');
+
+:root {
+    --navy: #04052B;
+    --navy-2: #07083a;
+    --cyan: #00a9ff;
+    --blue: #1264ff;
+    --gold: #d4c25b;
+    --orange: #d08745;
+    --text: #ffffff;
+    --muted: rgba(255, 255, 255, .72);
+    --line: rgba(255, 255, 255, .28);
+    --max: 1280px;
+    --container: 1280px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background:
+        radial-gradient(circle at 12% 14%, rgba(38, 126, 255, .2), transparent 22%),
+        radial-gradient(circle at 88% 33%, rgba(0, 212, 255, .12), transparent 20%),
+        linear-gradient(180deg, #020326 0%, var(--navy) 46%, #020326 100%);
+    color: var(--text);
+    min-width: 1100px;
+    overflow-x: auto;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(#fff 1px, transparent 1px),
+        radial-gradient(#2bcfff 1px, transparent 1px);
+    background-size: 92px 92px, 137px 137px;
+    background-position: 0 0, 38px 62px;
+    opacity: .18;
+    z-index: -1;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section-inner {
+    width: min(var(--max), calc(100% - 96px));
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1400;
+    background: rgba(4, 5, 43, 0.86);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    display: flex;
+    align-items: center;
+}
+
+.wrapper_1400 {
+    width: min(100% - 80px, var(--container));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    height: 80px;
+}
+
+.header-logo img {
+    max-height: 42px;
+}
+
+.btn-trigger {
+    margin-left: auto;
+    width: 42px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1700;
+}
+
+.btn-trigger span {
+    height: 2px;
+    width: 100%;
+    display: block;
+    background: #fff;
+    border-radius: 2px;
+    transition: .3s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, .45);
+}
+
+.btn-trigger.active span:nth-child(1) {
+    transform: translateY(14px) rotate(-45deg);
+}
+
+.btn-trigger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-trigger.active span:nth-child(3) {
+    transform: translateY(-14px) rotate(45deg);
+}
+
+.menu-dropdown {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(4, 5, 43, .96);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s ease;
+    z-index: 1300;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.menu-dropdown.open {
+    max-height: 430px;
+}
+
+.menu-dropdown .menu-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px 44px;
+    padding: 42px 0 48px;
+}
+
+.menu-dropdown a {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 22px;
+    letter-spacing: .08em;
+    opacity: .88;
+    transition: .2s;
+}
+
+.menu-dropdown a:hover {
+    color: #33d9ff;
+    text-shadow: 0 0 18px #00d5ff;
+    opacity: 1;
+}
+
+
+
+/* recruit */
+.recruit {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+
+    padding-top: 120px;
+    margin-top: 0;
+
+    background: #04052B;
+}
+
+.recruit_bg_wrap {
+    min-height: 260px;
+    background: none;
+}
+
+.recruit_bg_wrap img {
+    display: block;
+
+    width: 100%;
+    height: 360px;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* footer */
+footer {
+    background: #04052B url('../assets/image/footer_bg.webp') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 54px 0 44px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+footer img[alt="logo"] {
+    margin: 0 auto 26px;
+    max-width: 150px;
+}
+
+footer .flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 34px;
+    margin-bottom: 22px;
+}
+
+footer .flex li a {
+    opacity: .82;
+    transition: .2s;
+    font-size: 14px;
+}
+
+footer .flex li a:hover {
+    opacity: 1;
+    text-shadow: 0 0 14px #0ff;
+}
+
+small {
+    opacity: .82;
+}
+
+/* ===== PC RESPONSIVE ONLY ===== */
+@media (max-width: 1280px) {
+    :root {
+        --max: 1040px;
+    }
+
+    body {
+        min-width: 1024px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .occupation-title {
+        font-size: 48px;
+    }
+
+    .people-grid {
+        gap: 22px;
+    }
+
+    .person-photo {
+        height: 132px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --max: 1240px;
+    }
+
+    .hero-img {
+        min-height: 720px;
+    }
+
+    .movie-frame {
+        height: 450px;
+    }
+}
+
+
+/* first section */
+.engineer-fv {
+    position: relative;
+
+    width: 100%;
+    height: 680px;
+
+    padding-top: 80px;
+
+    overflow: hidden;
+
+    background: #020326;
+}
+
+.engineer-fv__bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transform: scale(1.02);
+
+    pointer-events: none;
+}
+
+.engineer-fv__inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(100% - 80px, var(--container));
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.engineer-fv__main {
+    margin: 0 0 28px;
+
+    color: #fff;
+
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1.32;
+    letter-spacing: .1em;
+}
+
+.engineer-fv__title {
+    margin: 0 0 14px;
+
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.engineer-fv__desc {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .engineer-fv {
+        min-height: 360px;
+        background-position: center right;
+    }
+
+    .engineer-fv__inner {
+        min-height: 360px;
+        padding: 45px 24px 32px;
+    }
+
+    .engineer-fv__main {
+        font-size: 32px;
+        line-height: 1.5;
+    }
+
+    .engineer-fv__title {
+        font-size: 30px;
+    }
+
+    .engineer-fv__desc {
+        max-width: 320px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .engineer-fv {
+        min-height: 320px;
+    }
+
+    .engineer-fv__inner {
+        min-height: 320px;
+        padding-top: 38px;
+    }
+
+    .engineer-fv__main {
+        font-size: 27px;
+    }
+
+    .engineer-fv__title {
+        font-size: 26px;
+    }
+}
+
+/* about */
+.department-about {
+    width: 100%;
+    padding: 58px 0 70px;
+    background-image: url("../image/engineer/about_bg.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #020326;
+}
+
+.department-about__inner {
+    width: min(100% - 80px, var(--container));
+    margin: 0 auto;
+}
+
+.department-about__lead {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.08em;
+}
+
+.department-about__line {
+    width: 640px;
+    height: 1px;
+    margin: 26px auto 28px;
+    border-top: 2px dotted #00a9ff;
+    position: relative;
+}
+
+.department-about__line::before,
+.department-about__line::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    width: 18px;
+    height: 18px;
+    border-top: 2px solid #00a9ff;
+    border-left: 2px solid #00a9ff;
+}
+
+.department-about__line::before {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.department-about__line::after {
+    transform: translateX(-50%) rotate(225deg);
+}
+
+/* buttons */
+.job-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 30px auto 60px;
+}
+
+.job-button {
+    position: relative;
+
+    height: 92px;
+
+    border: 1px solid rgba(255, 255, 255, .7);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px 0 36px;
+
+    color: #fff;
+
+    transition: .25s ease;
+}
+
+.job-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 64px;
+
+    width: 1px;
+    height: 48px;
+
+    background: rgba(255, 255, 255, .35);
+
+    transform: translateY(-50%);
+}
+
+.job-button__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-button__en {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.job-button__ja {
+    margin-top: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.job-button__arrow {
+    flex-shrink: 0;
+
+    font-size: 20px;
+    line-height: 1;
+}
+
+.job-button:hover,
+.job-button.is-active {
+    background: #fff;
+    color: #04052B;
+}
+
+.job-button:hover::after,
+.job-button.is-active::after {
+    background: rgba(4, 5, 43, .18);
+}
+
+/* tabs */
+.department-tabs {
+    width: min(100%, 780px);
+    height: 84px;
+    margin: 0 auto 58px;
+    padding: 12px;
+
+    border: 2px solid rgba(255, 255, 255, .9);
+    border-radius: 999px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.department-tab {
+    height: 58px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.department-tab:hover,
+.department-tab.is-active {
+    background: linear-gradient(90deg, #008dff 0%, #14d8ff 100%);
+    box-shadow: 0 0 20px rgba(0, 213, 255, .45);
+}
+
+/* content */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.about-text {
+    width: 48%;
+}
+
+.about-image {
+    width: 52%;
+    height: 340px;
+
+    background: #e9e9e9;
+
+    border-radius: 999px;
+
+    flex-shrink: 0;
+}
+
+.about-text h2 {
+    margin: 0 0 30px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.about-text h2 span {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 76px;
+    font-weight: 500;
+    line-height: .9;
+    letter-spacing: 0.03em;
+
+    color: #fff;
+    text-shadow:
+        0 0 10px #00f6ff,
+        0 0 22px rgba(0, 246, 255, .8);
+}
+
+.about-text p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 2.05;
+    letter-spacing: 0.05em;
+    max-width: 620px;
+}
+
+/* ===== RESULTS ===== */
+.results {
+    /* bg image */
+    background: url("/assets//image/engineer/results.webp") no-repeat center center;
+    background-size: cover;
+
+    /* pc only layout */
+    padding: 110px 0 120px;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.results__inner {
+    width: 1280px;
+    /* fixed as requested */
+    margin: 0 auto;
+}
+
+.results__frame {
+    position: relative;
+
+    width: 100%;
+    min-height: 620px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 34px;
+
+    /* glass */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 56px 56px 52px;
+    overflow: hidden;
+}
+
+.results__header {
+    position: relative;
+    z-index: 2;
+}
+
+.results__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 74px;
+    letter-spacing: 0.06em;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.55),
+        0 0 26px rgba(0, 255, 255, 0.35);
+}
+
+.results__subtitle {
+    margin: 10px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(220, 255, 255, 0.92);
+}
+
+.results__content {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 34px;
+    min-height: 440px;
+}
+
+.results__media {
+    position: absolute;
+    right: 64px;
+
+    /* dịch lên trên để đè lên card */
+    top: -100px;
+
+    width: 720px;
+    height: 350px;
+
+    background: rgba(140, 140, 140, 0.92);
+    clip-path: polygon(10% 14%,
+            /* top-left */
+            100% 4%,
+            /* top-right  */
+
+            100% 90%,
+            /* bottom-right */
+            0% 94%
+            /* bottom-left  */
+        );
+
+    border-radius: 12px;
+    transform: none;
+    z-index: 3;
+}
+
+/* white text card bottom-left */
+.results__card {
+    position: absolute;
+    left: 56px;
+    bottom: 56px;
+    width: 520px;
+
+    background: #fff;
+    color: #0b0b1f;
+
+    padding: 26px 28px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+
+    z-index: 2;
+    /* thấp hơn .results__media */
+}
+
+/* nâng chữ lên trên tứ giác */
+.results__cardTitle,
+.results__cardText {
+    position: relative;
+    z-index: 4;
+    /* cao hơn .results__media (3) */
+}
+
+.results__cardTitle {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.results__cardText {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: rgba(11, 11, 31, 0.82);
+}
+
+/* sparkle group placement (right side) */
+.results__sparkles {
+    position: absolute;
+    right: 70px;
+    top: 150px;
+    width: 60px;
+    height: 280px;
+    pointer-events: none;
+}
+
+/* 4-point sparkle (lens flare style) */
+.results__spark {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transform: rotate(45deg);
+
+    /* glow */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .35));
+}
+
+/* Build the sparkle using 2 diamonds crossing */
+.results__spark::before,
+.results__spark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: currentColor;
+}
+
+/* make it "star" not square:
+   - one diamond thinner horizontally
+   - one diamond thinner vertically
+*/
+.results__spark::before {
+    transform: scaleX(0.38) scaleY(1);
+    opacity: 0.95;
+}
+
+.results__spark::after {
+    transform: scaleX(1) scaleY(0.38);
+    opacity: 0.95;
+}
+
+/* colors */
+.results__spark--c {
+    color: #22f4ff;
+    right: 2px;
+    top: 20px;
+    filter: drop-shadow(0 0 14px rgba(0, 255, 255, .55));
+}
+
+.results__spark--w1 {
+    color: rgba(255, 255, 255, 0.96);
+    right: 8px;
+    top: 108px;
+    width: 26px;
+    height: 26px;
+}
+
+.results__spark--w2 {
+    color: rgba(255, 255, 255, 0.92);
+    right: 10px;
+    top: 172px;
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .28));
+}
+
+.results__spark--w3 {
+    color: rgba(255, 255, 255, 0.88);
+    right: 14px;
+    top: 232px;
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, .22));
+}
+
+/* ===== PERIOD ===== */
+.period {
+    /* background image (the file you showed is about.webp) */
+    background: url("../image/engineer/about.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 110px 0 120px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+}
+
+.period__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.period__head {
+    display: flex;
+    align-items: flex-end;
+    gap: 22px;
+}
+
+.period__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.55),
+        0 0 26px rgba(0, 255, 255, 0.35);
+}
+
+.period__sub {
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(235, 255, 255, 0.92);
+}
+
+.period__dots {
+    display: inline-block;
+    transform: translateY(2px);
+    opacity: 0.7;
+    letter-spacing: 0.12em;
+}
+
+/* layout */
+.period__body {
+    margin-top: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 72px;
+}
+
+/* left big pill */
+.period__thumb {
+    width: 620px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 999px;
+}
+
+/* right text block */
+.period__text {
+    width: 600px;
+}
+
+.period__date {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    opacity: 0.95;
+    margin-bottom: 14px;
+}
+
+.period__headline {
+    margin: 0 0 18px;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.period__desc {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2.1;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===== VOICE (2 images) ===== */
+.voice {
+    position: relative;
+
+    /* bg #1 */
+    background: url("../image/engineer/about.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 84px 0 120px;
+    min-height: 760px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+
+    overflow: hidden;
+    /* hide overflow from moon image */
+}
+
+/* bg #2 overlay bottom (voice.webp) */
+.voice__bgMoon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+
+    height: 460px;
+
+    background: url("../image/engineer/voice.webp") no-repeat center bottom;
+    background-size: contain;
+    /* keep full image, no crop */
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.voice__inner {
+    position: relative;
+    z-index: 2;
+    /* above bg overlays */
+
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.voice__head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.voice__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 86px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.55),
+        0 0 26px rgba(0, 255, 255, 0.35);
+}
+
+.voice__sub {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(235, 255, 255, 0.92);
+}
+
+/* 4 cards staggered */
+.voice__grid {
+    margin-top: 38px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 44px;
+
+    align-items: start;
+}
+
+/* card base */
+.voiceCard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* stagger offsets (not same baseline) */
+.voiceCard--up1 {
+    transform: translateY(0px);
+}
+
+.voiceCard--down2 {
+    transform: translateY(70px);
+}
+
+.voiceCard--up3 {
+    transform: translateY(10px);
+}
+
+.voiceCard--down4 {
+    transform: translateY(60px);
+}
+
+/* avatars */
+.voiceCard__avatar {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.voiceCard__avatar--round {
+    width: 230px;
+    height: 230px;
+    border-radius: 999px;
+}
+
+.voiceCard__avatar--pill {
+    width: 230px;
+    height: 270px;
+    border-radius: 999px;
+}
+
+/* meta */
+.voiceCard__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.voiceCard__name {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.voiceCard__role {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    opacity: 0.9;
+}
+
+.voiceCard__link {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.86);
+
+    transition: .2s;
+}
+
+.voiceCard__link:hover {
+    border-color: rgba(0, 255, 255, 0.75);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(0, 255, 255, 0.35);
+}
+
+.voiceCard__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* ===== JOB (2 images) ===== */
+
+
+.job {
+    position: relative;
+    background: url("../image/engineer/results.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 95px 0 110px;
+    min-height: 800px;
+
+    overflow: hidden;
+}
+
+.job__inner{
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.job__plate{
+  position: absolute;
+  left: 0;
+  top: 70%;
+  transform: translateY(-50%);
+
+  width: 1280px;   /* always full width */
+  height: auto;    /* keep correct ratio */
+
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.job__content {
+    position: relative;
+    z-index: 2;
+    /* text above plate */
+
+    width: 600px;
+    /* give a bit more room */
+    padding: 42px 0 0 80px;
+    top: 60px;
+    /* align inside plate */
+}
+
+.job__head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.job__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 78px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.55),
+        0 0 26px rgba(0, 255, 255, 0.35);
+}
+
+.job__sub {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(235, 255, 255, 0.92);
+}
+
+.job__lead {
+    margin: 18px 0 12px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.job__desc {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.05;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.90);
+}
+
+/* buttons like mock */
+/* 2 buttons = full width of content area */
+.job__actions{
+  margin-top: 22px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 nút chia đều */
+  gap: 18px;
+
+  width: 100%; /* = width của .job__content */
+}
+
+/* button style like .job-button */
+.jobBtn{
+  position: relative;
+  height: 60px;
+
+  border: 1px solid rgba(255, 255, 255, .7);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px 0 36px;
+
+  color: #fff;
+  text-decoration: none;
+
+  transition: .25s ease;
+}
+
+/* vertical separator line */
+.jobBtn::after{
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  right: 64px;
+
+  width: 1px;
+  height: 48px;
+
+  background: rgba(255, 255, 255, .35);
+  transform: translateY(-50%);
+}
+
+/* text */
+.jobBtn__text{
+  font-family: "Noto Sans Japan", sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* arrow */
+.jobBtn__arrow{
+  flex-shrink: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* hover */
+.jobBtn:hover{
+  background: #fff;
+  color: #04052B;
+}
+
+.jobBtn:hover::after{
+  background: rgba(4, 5, 43, .18);
+}
