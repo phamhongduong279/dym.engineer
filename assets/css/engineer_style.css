@@ -1770,19 +1770,21 @@ small {
 }
 
 /* ===== Part 2: 4 egg buttons (FINAL CSS ONLY) ===== */
-.videoNav{
-  margin-top: 100px;
-  margin-bottom: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 34px;              /* khoảng cách giữa các quả */
-  align-items: center;
+.videoNav {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+    transform: scale(1);
+    transform-origin: center;
 }
 
 /* clickable area */
 .videoNav__btn{
   position: relative;
-  height: 150px;          /* nhỏ lại để thoáng */
+  height: 190px;          /* nhỏ lại để thoáng */
   border: 0;
   background: transparent;
 
