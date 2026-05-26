@@ -1789,7 +1789,7 @@ small {
     max-width: 640px;
 }
 
-/* ===== VIDEO SECTION (3 parts) ===== */
+/* ===== VIDEO SECTION (2 parts) ===== */
 .videoSec {
     padding: 80px 0 90px;
     font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -2325,7 +2325,6 @@ small {
     height: 10px;
     border-radius: 999px;
     background: rgba(255, 255, 255, .0);
-    /* không cần chấm, chỉ làm mốc */
 }
 
 /* CARDS base */
@@ -2447,16 +2446,13 @@ body {
 .fv {
     position: relative;
     width: 100vw;
-    left: 40%;
+    left: 50%;
     transform: translateX(-50%);
 
     margin-top: -200px;
     height: calc(100vh + 80px);
-    /* giữ header đè */
-    min-height: 1500px;
-    /* tăng từ 720/800 -> 980 */
+    min-height: 1200px;
     max-height: 2000px;
-    /* tăng trần để khỏi bị giới hạn */
 
     overflow: hidden;
     background: #000;
