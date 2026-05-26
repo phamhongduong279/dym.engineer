@@ -1,0 +1,2477 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=League+Spartan:wght@400;600;700;800&family=Dela+Gothic+One&display=swap');
+
+:root {
+    --navy: black;
+    --navy-2: black;
+    --cyan: #00a9ff;
+    --blue: #1264ff;
+    --gold: #d4c25b;
+    --orange: #d08745;
+    --text: #ffffff;
+    --muted: rgba(255, 255, 255, .72);
+    --line: rgba(255, 255, 255, .28);
+    --max: 1280px;
+    --container: 1280px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background:
+        radial-gradient(circle at 12% 14%, rgba(38, 126, 255, .2), transparent 22%),
+        radial-gradient(circle at 88% 33%, rgba(0, 212, 255, .12), transparent 20%),
+        linear-gradient(180deg, black 0%, var(--navy) 46%, #020326 100%);
+    color: var(--text);
+    min-width: 1100px;
+    overflow-x: auto;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(#fff 1px, transparent 1px),
+        radial-gradient(#2bcfff 1px, transparent 1px);
+    background-size: 92px 92px, 137px 137px;
+    background-position: 0 0, 38px 62px;
+    opacity: .18;
+    z-index: -1;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section-inner {
+    width: min(var(--max), calc(100% - 96px));
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1400;
+    background: black;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    display: flex;
+    align-items: center;
+}
+
+.wrapper_1400 {
+    width: min(100% - 80px, var(--container));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    height: 80px;
+}
+
+.header-logo img {
+    max-height: 42px;
+}
+
+.btn-trigger {
+    margin-left: auto;
+    width: 42px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1700;
+}
+
+.btn-trigger span {
+    height: 2px;
+    width: 100%;
+    display: block;
+    background: #fff;
+    border-radius: 2px;
+    transition: .3s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, .45);
+}
+
+.btn-trigger.active span:nth-child(1) {
+    transform: translateY(14px) rotate(-45deg);
+}
+
+.btn-trigger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-trigger.active span:nth-child(3) {
+    transform: translateY(-14px) rotate(45deg);
+}
+
+.menu-dropdown {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(4, 5, 43, .96);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s ease;
+    z-index: 1300;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.menu-dropdown.open {
+    max-height: 430px;
+}
+
+.menu-dropdown .menu-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px 44px;
+    padding: 42px 0 48px;
+}
+
+.menu-dropdown a {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 22px;
+    letter-spacing: .08em;
+    opacity: .88;
+    transition: .2s;
+}
+
+.menu-dropdown a:hover {
+    color: #33d9ff;
+    text-shadow: 0 0 18px #00d5ff;
+    opacity: 1;
+}
+
+
+
+/* recruit */
+.recruit {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+
+    margin-top: 0;
+
+    background: black;
+}
+
+.recruit_bg_wrap {
+    min-height: 260px;
+    background: none;
+}
+
+.recruit_bg_wrap img {
+    display: block;
+
+    width: 100%;
+    height: 360px;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* footer */
+footer {
+    background: #04052B url('../assets/image/footer_bg.webp') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 54px 0 44px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+footer img[alt="logo"] {
+    margin: 0 auto 26px;
+    max-width: 150px;
+}
+
+footer .flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 34px;
+    margin-bottom: 22px;
+}
+
+footer .flex li a {
+    opacity: .82;
+    transition: .2s;
+    font-size: 14px;
+}
+
+footer .flex li a:hover {
+    opacity: 1;
+    text-shadow: 0 0 14px #0ff;
+}
+
+small {
+    opacity: .82;
+}
+
+/* ===== PC RESPONSIVE ONLY ===== */
+@media (max-width: 1280px) {
+    :root {
+        --max: 1040px;
+    }
+
+    body {
+        min-width: 1024px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .occupation-title {
+        font-size: 48px;
+    }
+
+    .people-grid {
+        gap: 22px;
+    }
+
+    .person-photo {
+        height: 132px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --max: 1240px;
+    }
+
+    .hero-img {
+        min-height: 720px;
+    }
+
+    .movie-frame {
+        height: 450px;
+    }
+}
+
+
+/* first section */
+.engineer-fv {
+    position: relative;
+
+    width: 100%;
+    height: 680px;
+
+    padding-top: 80px;
+
+    overflow: hidden;
+
+    background: #020326;
+}
+
+.engineer-fv__bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transform: scale(1.02);
+
+    pointer-events: none;
+}
+
+.engineer-fv__inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(100% - 80px, var(--container));
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.engineer-fv__main {
+    margin: 0 0 28px;
+
+    color: #fff;
+
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1.32;
+    letter-spacing: .1em;
+}
+
+.engineer-fv__title {
+    margin: 0 0 14px;
+
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.engineer-fv__desc {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .engineer-fv {
+        min-height: 360px;
+        background-position: center right;
+    }
+
+    .engineer-fv__inner {
+        min-height: 360px;
+        padding: 45px 24px 32px;
+    }
+
+    .engineer-fv__main {
+        font-size: 32px;
+        line-height: 1.5;
+    }
+
+    .engineer-fv__title {
+        font-size: 30px;
+    }
+
+    .engineer-fv__desc {
+        max-width: 320px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .engineer-fv {
+        min-height: 320px;
+    }
+
+    .engineer-fv__inner {
+        min-height: 320px;
+        padding-top: 38px;
+    }
+
+    .engineer-fv__main {
+        font-size: 27px;
+    }
+
+    .engineer-fv__title {
+        font-size: 26px;
+    }
+}
+
+/* about */
+.department-about {
+    width: 100%;
+    padding: 58px 0 70px;
+    background-image: url("../image/engineer/about_bg.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.department-about__inner {
+    width: min(100% - 80px, var(--container));
+    margin: 0 auto;
+}
+
+.department-about__lead {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.08em;
+}
+
+.department-about__line {
+    width: 640px;
+    height: 1px;
+    margin: 26px auto 28px;
+    border-top: 2px dotted #00a9ff;
+    position: relative;
+}
+
+.department-about__line::before,
+.department-about__line::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    width: 18px;
+    height: 18px;
+    border-top: 2px solid #00a9ff;
+    border-left: 2px solid #00a9ff;
+}
+
+.department-about__line::before {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.department-about__line::after {
+    transform: translateX(-50%) rotate(225deg);
+}
+
+/* buttons */
+.job-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 30px auto 60px;
+}
+
+.job-button {
+    position: relative;
+
+    height: 92px;
+
+    border: 1px solid rgba(255, 255, 255, .7);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px 0 36px;
+
+    color: #fff;
+
+    transition: .25s ease;
+}
+
+.job-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 64px;
+
+    width: 1px;
+    height: 48px;
+
+    background: rgba(255, 255, 255, .35);
+
+    transform: translateY(-50%);
+}
+
+.job-button__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-button__en {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.job-button__ja {
+    margin-top: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.job-button__arrow {
+    flex-shrink: 0;
+
+    font-size: 20px;
+    line-height: 1;
+}
+
+.job-button:hover,
+.job-button.is-active {
+    background: #fff;
+    color: #04052B;
+}
+
+.job-button:hover::after,
+.job-button.is-active::after {
+    background: rgba(4, 5, 43, .18);
+}
+
+/* tabs */
+.department-tabs {
+    width: min(100%, 780px);
+    height: 84px;
+    margin: 0 auto 58px;
+    padding: 12px;
+
+    border: 2px solid rgba(255, 255, 255, .9);
+    border-radius: 999px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.department-tab {
+    height: 58px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.department-tab:hover,
+.department-tab.is-active {
+    background: linear-gradient(90deg, #008dff 0%, #14d8ff 100%);
+    box-shadow: 0 0 20px rgba(0, 213, 255, .45);
+}
+
+/* content */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.about-text {
+    width: 48%;
+}
+
+.about-image {
+    width: 52%;
+    height: 340px;
+
+    background: #e9e9e9;
+
+    border-radius: 999px;
+
+    flex-shrink: 0;
+}
+
+.about-text h2 {
+    margin: 0 0 30px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.about-text h2 span {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 76px;
+    font-weight: 500;
+    line-height: .9;
+    letter-spacing: 0.03em;
+
+    color: #fff;
+    text-shadow:
+        0 0 10px #00f6ff,
+        0 0 22px rgba(0, 246, 255, .8);
+}
+
+.about-text p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 2.05;
+    letter-spacing: 0.05em;
+    max-width: 620px;
+}
+
+/* ===== RESULTS ===== */
+.results {
+    /* bg image */
+    background: url("/assets//image/engineer/results.webp") no-repeat center center;
+    background-size: cover;
+
+    /* pc only layout */
+    padding: 110px 0 120px;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.results__inner {
+    width: 1280px;
+    /* fixed as requested */
+    margin: 0 auto;
+}
+
+.results__frame {
+    position: relative;
+
+    width: 100%;
+    min-height: 620px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 34px;
+
+    /* glass */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 56px 56px 52px;
+    overflow: hidden;
+}
+
+.results__header {
+    position: relative;
+    z-index: 2;
+}
+
+.results__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 74px;
+    letter-spacing: 0.06em;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.55),
+        0 0 26px rgba(0, 255, 255, 0.35);
+}
+
+.results__subtitle {
+    margin: 10px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(220, 255, 255, 0.92);
+}
+
+.results__content {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 34px;
+    min-height: 440px;
+}
+
+.results__media {
+    position: absolute;
+    right: 64px;
+
+    /* dịch lên trên để đè lên card */
+    top: -100px;
+
+    width: 720px;
+    height: 350px;
+
+    background: rgba(140, 140, 140, 0.92);
+    clip-path: polygon(10% 14%,
+            /* top-left */
+            100% 4%,
+            /* top-right  */
+
+            100% 90%,
+            /* bottom-right */
+            0% 94%
+            /* bottom-left  */
+        );
+
+    border-radius: 12px;
+    transform: none;
+    z-index: 3;
+}
+
+/* white text card bottom-left */
+.results__card {
+    position: absolute;
+    left: 56px;
+    bottom: 56px;
+    width: 520px;
+
+    background: #fff;
+    color: #0b0b1f;
+
+    padding: 26px 28px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+
+    z-index: 2;
+    /* thấp hơn .results__media */
+}
+
+/* nâng chữ lên trên tứ giác */
+.results__cardTitle,
+.results__cardText {
+    position: relative;
+    z-index: 4;
+    /* cao hơn .results__media (3) */
+}
+
+.results__cardTitle {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.results__cardText {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: rgba(11, 11, 31, 0.82);
+}
+
+/* sparkle group placement (right side) */
+.results__sparkles {
+    position: absolute;
+    right: 70px;
+    top: 150px;
+    width: 60px;
+    height: 280px;
+    pointer-events: none;
+}
+
+/* 4-point sparkle (lens flare style) */
+.results__spark {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transform: rotate(45deg);
+
+    /* glow */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .35));
+}
+
+/* Build the sparkle using 2 diamonds crossing */
+.results__spark::before,
+.results__spark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: currentColor;
+}
+
+/* make it "star" not square:
+   - one diamond thinner horizontally
+   - one diamond thinner vertically
+*/
+.results__spark::before {
+    transform: scaleX(0.38) scaleY(1);
+    opacity: 0.95;
+}
+
+.results__spark::after {
+    transform: scaleX(1) scaleY(0.38);
+    opacity: 0.95;
+}
+
+/* colors */
+.results__spark--c {
+    color: #22f4ff;
+    right: 2px;
+    top: 20px;
+    filter: drop-shadow(0 0 14px rgba(0, 255, 255, .55));
+}
+
+.results__spark--w1 {
+    color: rgba(255, 255, 255, 0.96);
+    right: 8px;
+    top: 108px;
+    width: 26px;
+    height: 26px;
+}
+
+.results__spark--w2 {
+    color: rgba(255, 255, 255, 0.92);
+    right: 10px;
+    top: 172px;
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .28));
+}
+
+.results__spark--w3 {
+    color: rgba(255, 255, 255, 0.88);
+    right: 14px;
+    top: 232px;
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, .22));
+}
+
+/* ===== PERIOD ===== */
+.period {
+    /* background image (the file you showed is about.webp) */
+    background: url("../image/marketer/period.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 110px 0 120px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+}
+
+.period__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* để sub-title đè lên giữa title */
+.period__head {
+    position: relative;
+    display: inline-block;
+    /* để canh overlay theo width chữ PERIOD */
+    align-items: initial;
+    /* không cần flex nữa */
+}
+
+/* PERIOD màu cam/gold giống ảnh */
+.period__title {
+    margin: 0;
+    font-family: "League Spartan", "Noto Sans JP", sans-serif;
+    font-size: 108px;
+    /* to hơn để giống mock, bạn có thể giữ 88 nếu muốn */
+    font-weight: 800;
+    line-height: 1;
+
+    color: #d4842a;
+    /* base orange */
+    text-shadow: none;
+    /* bỏ glow xanh */
+}
+
+/* sub-title nằm đè giữa chữ */
+.period__sub {
+    position: absolute;
+    left: 35%;
+    top: 40%;
+    /* nằm khoảng giữa chữ PERIOD */
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: #ffffff;
+    /* chữ trắng như mock */
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.period__dots {
+    display: inline-block;
+    transform: translateY(2px);
+    opacity: 0.7;
+    letter-spacing: 0.12em;
+}
+
+/* layout */
+.period__body {
+    margin-top: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 72px;
+}
+
+/* left big pill */
+.period__thumb {
+    width: 620px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 999px;
+}
+
+/* right text block */
+.period__text {
+    width: 600px;
+}
+
+.period__date {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    opacity: 0.95;
+    margin-bottom: 14px;
+}
+
+.period__headline {
+    margin: 0 0 18px;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.period__desc {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2.1;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===== VOICE (2 images) ===== */
+.voice {
+    position: relative;
+
+    /* bg #1 */
+    background: url("../image/marketer/period.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 84px 0 120px;
+    min-height: 760px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+
+    overflow: hidden;
+    /* hide overflow from moon image */
+}
+
+
+.voice__inner {
+    position: relative;
+    z-index: 2;
+    /* above bg overlays */
+
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* ===== VOICE head: left solid + right outline under card #3 ===== */
+.voice__head {
+    position: relative;
+    height: 130px;
+    margin-bottom: -50px;
+    overflow: visible;
+}
+
+
+
+.voice__pattern2 {
+    width: 1280px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 300px;
+
+    padding-top: 46px;
+}
+
+/* shared */
+.voice__pat2 {
+    /* position: absolute; */
+    top: 50px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 112px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+
+.voice__pat2--solid {
+    left: 0;
+    color: #F67500;
+}
+
+
+
+.voice__pat2--outline {
+    left: 592px;
+    /* 662 - 70 */
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(246, 117, 0, .75);
+    text-stroke: 2px rgba(246, 117, 0, .75);
+}
+
+/* subtitle nằm trên chữ */
+.voice__sub {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: rgba(255, 255, 255, .92);
+    z-index: 2;
+}
+
+/* subtitle stays on top */
+.voice__sub {
+    position: absolute;
+    left: calc((100vw - 1280px)/2);
+    /* bám theo container 1280 */
+    top: 12px;
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: rgba(255, 255, 255, .92);
+
+    z-index: 2;
+    /* trên chữ VOICE */
+}
+
+/* foreground title (orange solid, nằm đè pattern) */
+.voice__title {
+    position: relative;
+    z-index: 1;
+
+    margin: 0;
+    font-family: "League Spartan", "Noto Sans JP", sans-serif;
+    font-size: 108px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1;
+
+    color: #F67500;
+    text-shadow: none;
+}
+
+/* 4 cards staggered */
+.voice__grid {
+    margin-top: 38px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 44px;
+
+    align-items: start;
+}
+
+/* card base */
+.voiceCard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* stagger offsets (not same baseline) */
+.voiceCard--up1 {
+    transform: translateY(0px);
+}
+
+.voiceCard--down2 {
+    transform: translateY(70px);
+}
+
+.voiceCard--up3 {
+    transform: translateY(10px);
+}
+
+.voiceCard--down4 {
+    transform: translateY(60px);
+}
+
+/* avatars */
+.voiceCard__avatar {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.voiceCard__avatar--round {
+    width: 230px;
+    height: 230px;
+    border-radius: 999px;
+}
+
+.voiceCard__avatar--pill {
+    width: 230px;
+    height: 270px;
+    border-radius: 999px;
+}
+
+/* meta */
+.voiceCard__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.voiceCard__name {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.voiceCard__role {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    opacity: 0.9;
+}
+
+.voiceCard__link {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.86);
+
+    transition: .2s;
+}
+
+.voiceCard__link:hover {
+    border-color: rgba(0, 255, 255, 0.75);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(0, 255, 255, 0.35);
+}
+
+.voiceCard__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* ===== JOB ===== */
+.job {
+    position: relative;
+    background: url("../image/marketer/job.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 95px 0 110px;
+    min-height: 800px;
+    overflow: hidden;
+}
+
+.job__inner {
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* orange plate (gradient like mock) */
+.job__plate {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1280px;
+    height: 560px;
+
+    border-radius: 260px;
+
+    background: linear-gradient(180deg,
+            #CD9475 0%,
+            #F67500 18%,
+            #D97619 42%,
+            #C2772E 62%,
+            #B3773A 78%,
+            #AF783F 100%);
+
+    opacity: .88;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* content sits above plate */
+.job__content {
+    position: relative;
+    z-index: 2;
+
+    /* 2 columns: left text + right circle */
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    column-gap: 40px;
+    align-items: center;
+
+    /* place inside plate */
+    padding: 78px 70px;
+}
+
+/* LEFT */
+.job__left {
+    max-width: 560px;
+    margin-left: 50px;
+}
+
+/* HEAD: title overlay subtitle */
+.job__head {
+    position: relative;
+    display: inline-block;
+    /* overlay based on title width */
+}
+
+/* JOB gradient text */
+.job__title {
+    margin: 0;
+    line-height: 1;
+}
+
+.job__titleText {
+    display: inline-block;
+    font-family: "League Spartan", "Noto Sans JP", sans-serif;
+    font-size: 92px;
+    font-weight: 800;
+    letter-spacing: .10em;
+
+    background-image: linear-gradient(180deg,
+            #CD9475 0%,
+            #F67500 25%,
+            #D97619 55%,
+            #AF783F 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* giống mock: hơi “mờ” nhẹ */
+    opacity: .88;
+    filter: saturate(1.15) contrast(1.12);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, .10);
+
+}
+
+/* subtitle overlays center of JOB */
+.job__sub {
+    position: absolute;
+    left: 60%;
+    top: 40%;
+    transform: translate(-56%, -50%);
+    /* lùi trái nhẹ */
+
+    margin: 0;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/* lead/desc */
+.job__lead {
+    margin: 18px 0 12px;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    color: #fff;
+}
+
+.job__desc {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.05;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .92);
+    max-width: 520px;
+}
+
+/* RIGHT circle */
+.job__right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.job__circle {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .92);
+}
+
+/* actions */
+.job__actions {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    max-width: 420px;
+}
+
+/* buttons */
+.jobBtn {
+    position: relative;
+    height: 56px;
+
+    border: 1px solid rgba(255, 255, 255, .7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 24px 0 28px;
+    color: #fff;
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+.jobBtn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 56px;
+
+    width: 1px;
+    height: 42px;
+    background: rgba(255, 255, 255, .35);
+    transform: translateY(-50%);
+}
+
+.jobBtn__text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.jobBtn__arrow {
+    flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.jobBtn:hover {
+    background: #fff;
+    color: #04052B;
+}
+
+.jobBtn:hover::after {
+    background: rgba(4, 5, 43, .18);
+}
+
+/* ===== APPEAL (2 images) ===== */
+.appeal {
+    position: relative;
+
+    /* image #1: whole section bg */
+    background: url("../image/engineer/about.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 78px 0 90px;
+    min-height: 560px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+
+    overflow: hidden;
+}
+
+/* image #2: moon overlay, rotated 180deg */
+.appeal__moon {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    /* put it at the top like mock */
+    top: -6px;
+
+    height: 300px;
+
+    background: url("../image/engineer/voice.webp") no-repeat center top;
+    background-size: contain;
+    /* keep full moon image */
+
+    transform: rotate(180deg);
+    transform-origin: center;
+
+    pointer-events: none;
+    z-index: 1;
+
+    /* optional: blend a bit */
+    opacity: 0.95;
+}
+
+.appeal__inner {
+    position: relative;
+    z-index: 2;
+
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.appeal__head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.appeal__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 78px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #eaffff;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, .55),
+        0 0 26px rgba(0, 255, 255, .35);
+}
+
+.appeal__sub {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: rgba(235, 255, 255, .92);
+}
+
+.appeal__body {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* left text block */
+.appeal__text {
+    width: 720px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.1;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .9);
+}
+
+.appeal__text p {
+    margin: 0;
+}
+
+/* right gray rounded card */
+.appeal__card {
+    width: 520px;
+    height: 140px;
+    border-radius: 26px;
+    background: rgba(230, 230, 230, .92);
+}
+
+/* ===== INTERVIEW ===== */
+.interview {
+    background-size: cover;
+    background: #fff;
+
+    padding: 86px 0 120px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #111;
+}
+
+.interview__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.interview__head {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.interview__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #d4842a;
+    /* text-shadow:
+        0 0 10px rgba(0, 255, 255, .55),
+        0 0 26px rgba(0, 255, 255, .35); */
+}
+
+.interview__sub {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: rgba(235, 255, 255, .92);
+}
+
+/* 4 cards */
+.interview__grid {
+    margin-top: 44px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 44px;
+
+    align-items: start;
+}
+
+.ivCard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+/* stagger */
+.ivCard--up1 {
+    transform: translateY(0px);
+}
+
+.ivCard--down2 {
+    transform: translateY(86px);
+}
+
+.ivCard--up3 {
+    transform: translateY(10px);
+}
+
+.ivCard--down4 {
+    transform: translateY(74px);
+}
+
+/* avatars */
+.ivCard__avatar {
+    background: #cfc9c9;
+}
+
+.ivCard__avatar--pill {
+    width: 230px;
+    height: 270px;
+    border-radius: 999px;
+}
+
+.ivCard__avatar--round {
+    width: 230px;
+    height: 230px;
+    border-radius: 999px;
+}
+
+/* meta */
+.ivCard__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ivCard__name {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #111;
+
+}
+
+.ivCard__role {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: #111;
+    opacity: .75;
+}
+
+/* circle arrow */
+.ivCard__link {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, .35);
+    color: rgba(255, 255, 255, .86);
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.ivCard__link:hover {
+    border-color: rgba(0, 0, 0, .55);
+    color: #000;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+}
+
+.ivCard__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(0, 0, 0, .78);
+    border-color: rgba(0, 0, 0, .25);
+
+}
+
+/* ===== SCHEDULE ===== */
+.schedule {
+    background: url("../image/marketer/schedule.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 80px 0 92px;
+
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #fff;
+}
+
+.schedule__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.schedule__head {
+    position: relative;
+    text-align: center;
+    margin-bottom: 44px;
+}
+
+/* outline big title */
+.schedule__title {
+    margin: 0;
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 92px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1;
+
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, .32);
+    text-stroke: 2px rgba(255, 255, 255, .32);
+
+    opacity: .95;
+}
+
+/* small subtitle in the middle */
+.schedule__sub {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+
+    margin: 0;
+    font-size: 30px;
+    font-weight: 200;
+    letter-spacing: .12em;
+    color: rgba(255, 255, 255, .85);
+}
+
+.schedule__grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 64px;
+
+    align-items: start;
+}
+
+/* left pills */
+.schedule__left {
+    display: grid;
+    gap: 34px;
+}
+
+.schedule__pill {
+    width: 360px;
+    height: 140px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .9);
+}
+
+/* right items */
+.schedule__right {
+    display: grid;
+    gap: 40px;
+    padding-top: 6px;
+}
+
+.scItem__head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.scItem__time {
+    font-family: "Noto Sans Japan", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .92);
+}
+
+.scItem__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .92);
+}
+
+.scItem__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .82);
+    max-width: 640px;
+}
+
+/* ===== VIDEO SECTION (2 parts) ===== */
+.videoSec {
+    padding: 80px 0 90px;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background: #fff;
+    color: #111;
+    /* base text on white */
+}
+
+.videoSec__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* ---------- Part 1: capsule plate + thumbnail ---------- */
+.videoSec {
+    padding: 120px 0 120px;
+}
+
+/* P1 wrapper */
+.videoHero {
+    position: relative;
+    aspect-ratio: 1280 / 360;
+    height: auto;
+}
+
+.videoHero__plate {
+    position: absolute;
+    inset: 0;
+    background: url("/assets/image/marketer/job-content.webp") no-repeat center center;
+    background-size: cover;
+    border-radius: 220px;
+    transform: scale(0.965);
+    transform-origin: center;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.videoHero__content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    gap: 44px;
+    padding: 56px 92px;
+    align-items: center;
+}
+
+.videoHero__thumbWrap {
+    display: flex;
+    align-items: flex-end;
+}
+
+.videoHero__thumb {
+    width: 450px;
+    height: 250px;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, .85);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    background: #fff;
+    margin-left: 100px;
+}
+
+.videoHero__text {
+    padding-top: 0;
+    padding-left: 0;
+    position: relative;
+}
+
+.videoHero__big {
+    left: -50px;
+    top: -40px;
+    margin-bottom: 0;
+    line-height: .9;
+    transform: translate(-28px, -6px);
+    font-size: 90px;
+    font-weight: bold;
+    position: relative;
+    z-index: 5;
+
+    color: transparent;
+    background-image: linear-gradient(180deg, #F67500 0%, #D97619 55%, #AF783F 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 10px 18px rgba(0, 0, 0, .22);
+    opacity: .88;
+    /* giống ảnh: chữ to nhưng hơi chìm */
+}
+
+.videoHero__title {
+    margin: 0 0 14px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, 0.96);
+}
+
+.videoHero__desc {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .88);
+    max-width: 520px;
+}
+
+/* ===== Part 2: 4 egg buttons (FINAL CSS ONLY) ===== */
+.videoNav {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* khoảng cách giữa các quả */
+    align-items: center;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+/* clickable area */
+.videoNav__btn {
+    position: relative;
+    height: 190px;
+    /* nhỏ lại để thoáng */
+    border: 0;
+    background: transparent;
+
+    color: #F67500;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    overflow: visible;
+    transition: .25s ease;
+}
+
+/* 2 layers: TOP tilt LEFT, BOTTOM tilt RIGHT */
+.videoNav__btn::before {
+    content: "";
+    position: absolute;
+
+
+    inset: -16px 22px;
+
+    /* egg-ish blob */
+    border-radius: 58% 42% 62% 38% / 55% 48% 52% 45%;
+    transform-origin: center;
+    border: 2px solid rgba(246, 117, 0, .85);
+
+
+    transition: .25s ease;
+}
+
+/* TOP layer (tilt LEFT) - default dark */
+.videoNav__btn::before {
+    z-index: 0;
+    background: white;
+    transform: rotate(-50deg) scale(.92);
+}
+
+/* keep content above egg */
+.videoNav__btn>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* hover: chuyển xanh và BỎ mờ (cả 2 layer đều rõ) */
+.videoNav__btn:hover {
+    color: #fff;
+}
+
+.videoNav__btn:hover::before {
+    background: linear-gradient(180deg, #16d8ff 0%, #0a61ff 100%);
+    border-color: rgba(0, 220, 255, .95);
+    box-shadow: 0 0 26px rgba(0, 220, 255, .28);
+}
+
+/* text styles */
+.videoNav__icon {
+    font-size: 26px;
+    margin-bottom: 2px;
+    opacity: .95;
+}
+
+.videoNav__en {
+    font-family: "League Spartan", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.videoNav__jp {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .10em;
+    opacity: .9;
+}
+
+/* text colors inside */
+.videoNav__en {
+    color: #F67500;
+}
+
+.videoNav__jp {
+    color: rgba(0, 0, 0, .55);
+}
+
+/* chữ Nhật hơi xám như mock */
+.videoNav__icon {
+    color: #F67500;
+}
+
+/* hover: fill orange, text/icon white */
+.videoNav__btn:hover {
+    color: #fff;
+}
+
+.videoNav__btn:hover::before {
+    background: linear-gradient(180deg, #F67500 0%, #D97619 55%, #AF783F 100%);
+    border-color: rgba(246, 117, 0, 1);
+    box-shadow: 0 14px 30px rgba(246, 117, 0, .22);
+}
+
+.videoNav__btn:hover::after {
+    background: rgba(246, 117, 0, .20);
+}
+
+.videoNav__btn:hover .videoNav__icon,
+.videoNav__btn:hover .videoNav__en,
+.videoNav__btn:hover .videoNav__jp {
+    color: #fff;
+}
+
+
+
+
+/* ---------- Part 3: 3 buttons (hover => white) like your job-button ---------- */
+/* ===== 3 JOB BUTTONS (black bg + centered group inside 1280 wrapper) ===== */
+
+.btn {
+    background: #000;
+    padding: 54px 0 64px;
+}
+
+/* wrapper already 1280 in your code, but enforce here too */
+.btn .videoSec__inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* center 3 buttons as a group (not stretched) */
+.videoJobs {
+    margin-top: 0;
+
+    display: flex;
+    justify-content: center;
+    /* center the whole 3-button group */
+    align-items: center;
+    gap: 28px;
+    /* distance between buttons */
+
+    width: 100%;
+}
+
+/* button */
+.videoJobs__btn {
+    position: relative;
+
+    width: 360px;
+    /* fixed width like mock */
+    height: 72px;
+
+    border: 1px solid rgba(255, 255, 255, .55);
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+    color: rgba(255, 255, 255, .92);
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+/* divider */
+.videoJobs__btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 54px;
+
+    width: 1px;
+    height: 42px;
+
+    background: rgba(255, 255, 255, .35);
+    transform: translateY(-50%);
+}
+
+/* text block */
+.videoJobs__content {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.videoJobs__en {
+    font-family: "Noto Sans JP", "Noto Sans Japan", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: .08em;
+    white-space: nowrap;
+}
+
+.videoJobs__ja {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    opacity: .9;
+    white-space: nowrap;
+}
+
+.videoJobs__arrow {
+    flex-shrink: 0;
+    font-size: 22px;
+    line-height: 1;
+    opacity: .95;
+}
+
+/* hover -> white */
+.videoJobs__btn:hover {
+    background: #fff;
+    color: #04052B;
+    border-color: rgba(255, 255, 255, .95);
+}
+
+.videoJobs__btn:hover::after {
+    background: rgba(4, 5, 43, .18);
+}
+
+
+
+/* ===== ACHIEVEMENTS ===== */
+.achv {
+    background: #fff;
+    padding: 90px 0 110px;
+    color: #0b0f2e;
+    overflow: hidden;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.achv__inner {
+    width: 1280px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 560px 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+/* LEFT D-shape: image overlays a grey pill */
+.achv__left {
+    position: relative;
+    height: 640px;
+}
+
+/* grey pill behind */
+.achv__pill {
+    position: absolute;
+    left: 100px;
+    top: 130px;
+
+    width: 320px;
+    height: 500px;
+    border-radius: 999px;
+    background: #e6e6e6;
+
+    z-index: 1;
+}
+
+/* planet image on top to "wrap" the gray */
+.achv__planet {
+    position: absolute;
+    left: 0;
+    top: 24px;
+
+    width: 620px;
+    height: 620px;
+    object-fit: cover;
+
+    border-radius: 0 999px 999px 0;
+    /* giống ảnh: nửa hình tròn */
+    z-index: 3;
+}
+
+/* RIGHT */
+.achv__right {
+    position: relative;
+    padding-top: 30px;
+}
+
+/* Title + subtitle overlay */
+.achv__head {
+    position: relative;
+    display: inline-block;
+    /* để sub canh theo title */
+    margin-bottom: 24px;
+    left: -155px;
+}
+
+/* Big beige title */
+.achv__title {
+    margin: 0;
+    font-family: "League Spartan", "Noto Sans JP", sans-serif;
+    font-size: 94px;
+    font-weight: 800;
+    line-height: .92;
+    letter-spacing: .06em;
+
+    color: rgba(212, 170, 130, .35);
+    /* be nhạt */
+}
+
+/* subtitle overlays center of title */
+.achv__sub {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: .14em;
+    color: #0b0f2e;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* Make image slightly cover the title (image above title) */
+.achv__planet {
+    /* 이미 z-index 3 */
+}
+
+.achv__title {
+    position: relative;
+    z-index: 1;
+}
+
+/* paragraph */
+.achv__desc {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.05;
+    letter-spacing: .06em;
+    color: rgba(11, 15, 46, .85);
+    max-width: 520px;
+}
+
+/* ===== Marketing Intro (bg image) ===== */
+.mkIntro {
+    /* đổi path ảnh cho đúng file của bạn */
+    background: url("../image/marketer/mkIntro.webp") no-repeat center center;
+    background-size: cover;
+
+    padding: 84px 0 110px;
+    color: #fff;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    overflow: hidden;
+}
+
+.mkIntro__inner {
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* HEAD (top-left) */
+.mkIntro__head {
+    margin-bottom: 34px;
+}
+
+.mkIntro__kicker {
+    margin: 0 0 10px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    font-size: 34px;
+}
+
+.mkIntro__title {
+    margin: 0;
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: .06em;
+    line-height: 1.15;
+}
+
+.mkIntro__hl {
+    display: inline-block;
+    padding: 10px 18px 8px;
+    margin-right: 10px;
+    background: linear-gradient(180deg, #CD9475 0%, #F67500 35%, #D97619 100%);
+    border-radius: 6px;
+    color: #fff;
+}
+
+/* LAYOUT area */
+.mkIntro__layout {
+    position: relative;
+    min-height: 520px;
+}
+
+/* “center” point (where lines point to) */
+.mkIntro__layout::after {
+    content: "";
+    position: absolute;
+    left: 62%;
+    top: 44%;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .0);
+}
+
+/* CARDS base */
+.mkIntroCard {
+    position: absolute;
+    width: 420px;
+    color: #fff;
+}
+
+.mkIntroCard__title {
+    margin: 0 0 10px;
+    display: inline-block;
+    padding: 6px 12px;
+
+    background: linear-gradient(180deg, #CD9475 0%, #F67500 35%, #D97619 100%);
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .08em;
+}
+
+.mkIntroCard__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .90);
+}
+
+/* positions */
+.mkIntroCard--left {
+    left: 0;
+    top: 270px;
+}
+
+.mkIntroCard--rightTop {
+    right: 0;
+    top: 70px;
+}
+
+/* right-bottom text block */
+.mkIntroText {
+    position: absolute;
+    right: 0;
+    top: 300px;
+    width: 520px;
+}
+
+.mkIntroText__text {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 2.0;
+    letter-spacing: .06em;
+    color: rgba(255, 255, 255, .90);
+}
+
+/* connector lines (2 lines like mock) */
+.mkIntroCard--left::before,
+.mkIntroCard--rightTop::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 12px;
+
+    height: 1px;
+    background: rgba(255, 255, 255, .65);
+    transform-origin: left center;
+}
+
+/* left line: goes to center */
+.mkIntroCard--left::before {
+    width: 320px;
+    transform: rotate(-25deg);
+}
+
+/* right-top line: goes down-left to center */
+.mkIntroCard--rightTop::before {
+    left: -320px;
+    width: 320px;
+    transform: rotate(25deg);
+}
+
+/* HERO = 1 background image only */
+.mkHeroImg {
+    position: relative;
+
+    background-image: url("/assets/image/marketer/fv.webp");
+    /* đổi đúng path */
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    /* không cho phóng quá: fit theo chiều cao màn hình */
+    background-size: auto 100%;
+
+    height: 100vh;
+    /* đúng 1 màn hình */
+    max-height: 900px;
+    /* chặn quá cao trên màn lớn (tuỳ chỉnh 800~1000) */
+    min-height: 640px;
+    /* chặn quá thấp */
+
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+    /* fill 2 bên nếu ảnh không đủ rộng */
+}
+
+/* đảm bảo không có margin default gây lệch */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* FV full-bleed */
+.fv {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-top: -200px;
+    height: calc(100vh + 80px);
+    min-height: 1200px;
+    max-height: 2000px;
+
+    overflow: hidden;
+    background: #000;
+}
+
+.fv__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+.header {
+    background: rgba(0, 0, 0, .55);
+    /* trong suốt để thấy FV */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
