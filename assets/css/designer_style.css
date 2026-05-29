@@ -373,10 +373,11 @@ small {
 /* ===== VOICE head: left solid + right outline under card #3 ===== */
 .voice__head {
     position: relative;
-    height: 180px;               /* tăng height để chữ Voice cao */
+    height: 180px;
+    /* tăng height để chữ Voice cao */
     margin-bottom: -44px;
     overflow: visible;
-    z-index:2;
+    z-index: 2;
 }
 
 .voice__pattern2 {
@@ -392,13 +393,14 @@ small {
 
 .voice__pat2 {
     font-family: "Playfair Display", "Noto Serif JP", serif;
-    font-size: 160px;           /* tăng height */
+    font-size: 160px;
+    /* tăng height */
     font-weight: 600;
     letter-spacing: .07em;
     line-height: 0.85;
     color: #111;
     margin-bottom: 8px;
-    z-index:2;
+    z-index: 2;
     /* Nếu muốn sát về trái: */
     /* margin-left: 0; */
 }
@@ -413,7 +415,7 @@ small {
     opacity: .98;
     font-weight: 400;
     position: relative;
-    z-index:3;
+    z-index: 3;
     /* Nếu muốn nó hơi đè vào card đầu tiên thì có thể dùng margin-bottom lớn ở .voice__head hoặc translateY(8px) */
 }
 
@@ -499,7 +501,7 @@ small {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color:#000
+    color: #000
 }
 
 .voiceCard__role {
@@ -550,9 +552,9 @@ small {
     transform: translateX(-50%);
     overflow: hidden;
     min-height: 1200px;
-    z-index: 0;
+    z-index: 1;
     padding-bottom: 80px;
-    /* tránh content sát đáy */
+    
 }
 
 .ivs-bg {
@@ -576,7 +578,7 @@ small {
 /* ===== INTERVIEW ===== */
 .interview {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     padding-top: 58px;
     padding-bottom: 28px;
 }
@@ -593,39 +595,45 @@ small {
 }
 
 .interview__title {
-  width: 100vw;
-  margin: 0 auto 16px auto;
-  font-family: "Noto Sans JP",sans-serif;
-  font-size: min(18vw, 210px);          /* auto scale, max 210px */
-  font-weight: 900;
-  letter-spacing: .04em;
-  text-align: center;
-  line-height: .97;
-  background: linear-gradient(105deg, #d2672f 7%, #efc06c 89%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-          background-clip: text;
-          color: transparent;
-  opacity: .98;
-  text-shadow: 0 6px 64px #fff2;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
+    width: 100vw;
+    margin: 0 auto 16px auto;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: min(18vw, 210px);
+    /* auto scale, max 210px */
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-align: center;
+    line-height: .97;
+    background: linear-gradient(105deg, #d2672f 7%, #efc06c 89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    opacity: .98;
+    text-shadow: 0 6px 64px #fff2;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .interview__cards {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  position: relative;
-  z-index: 2;
-  top:50px
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: relative;
+    z-index: 4;
+    top: 50px
 }
 
-.ivCard--up   { transform: translateY(-38px); }
-.ivCard--down { transform: translateY(42px); }
+.ivCard--up {
+    transform: translateY(-38px);
+}
+
+.ivCard--down {
+    transform: translateY(42px);
+}
 
 .interview__sub {
     margin: 0 0 10px;
@@ -757,7 +765,7 @@ small {
     padding: 80px 0 92px;
     background: none;
     z-index: 0;
-    top:80px;
+    top: 80px;
 }
 
 /* nền ảnh bo góc, luôn full width */
@@ -1289,7 +1297,8 @@ body {
     max-width: 600px;
     text-align: center;
     text-shadow: 0 2px 16px #000a, 0 0 6px #fff5;
-    pointer-events: none; /* không cản trở click ảnh */
+    pointer-events: none;
+    /* không cản trở click ảnh */
     user-select: none;
 }
 
@@ -1303,291 +1312,634 @@ body {
 
 
 .sec3-btns {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  min-height: 320px;
-  padding-top: 50px;
-  padding-bottom: 28px;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    min-height: 320px;
+    padding-top: 50px;
+    padding-bottom: 28px;
 }
+
 .sec3-btns__bg {
-  position: absolute;
-  inset: 0;
-  width: 100vw; height: 100%;
-  z-index: 0;
-  pointer-events: none;
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
+
 .sec3-btns__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
 .sec3-btns .videoSec__inner {
-  width: 1280px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .videoJobs {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    width: 100%;
 }
 
 .videoJobs__btn {
-  width: 320px;
-  height: 70px;
-  border: 1.5px solid #111;
-  background: transparent;
-  color: #111;
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 20px;
-  letter-spacing: .08em;
-  text-decoration: none;
-  transition: background .18s, color .2s, border .2s;
-  border-radius: 0;
-  position: relative;
+    width: 320px;
+    height: 70px;
+    border: 1.5px solid #111;
+    background: transparent;
+    color: #111;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: background .18s, color .2s, border .2s;
+    border-radius: 0;
+    position: relative;
 }
 
 
 
 
 .videoJobs__btn:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+    background: #111;
+    color: #fff;
+    border-color: #111;
 }
 
 .videoJobs__arrow {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 18px;
 }
 
 .videoJobs__en {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: .09em;
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: .09em;
 }
 
 .videoJobs__ja {
-  margin-left: 8px;
-  font-size: 13px;
-  color: inherit;
-  font-weight: 500;
+    margin-left: 8px;
+    font-size: 13px;
+    color: inherit;
+    font-weight: 500;
 }
 
 .webpromo {
-  width: 1280px;
-  max-width: 95vw;
-  margin: 0 auto 0 auto;
-  padding: 64px 0 46px 0;
-  position: relative;
-  z-index: 2;
-  text-align: center;
+    width: 1280px;
+    max-width: 95vw;
+    margin: 0 auto 0 auto;
+    padding: 64px 0 46px 0;
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 .webpromo__head {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .webpromo__title {
-  font-family: "Playfair Display", serif;
-  font-size: 88px;
-  font-weight: 700;
-  letter-spacing: .03em;
-  text-align: center;
-  line-height: 0.98;
-  color: #222;
-  margin: 0 0 6px 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 28px;
+    font-family: "Playfair Display", serif;
+    font-size: 88px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-align: center;
+    line-height: 0.98;
+    color: #222;
+    margin: 0 0 6px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 28px;
 }
+
 .webpromo__sub {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 20px;
-  margin-left: 24px;
-  color: #181818;
-  font-weight: 400;
-  letter-spacing: .14em;
-  margin-bottom: 11px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    margin-left: 24px;
+    color: #181818;
+    font-weight: 400;
+    letter-spacing: .14em;
+    margin-bottom: 11px;
 }
 
 .webpromo__copy {
-  font-size: 36px;
-  letter-spacing: 0.18em;
-  font-family: "Noto Sans JP", Meiryo, sans-serif;
-  font-weight: 500;
-  margin-bottom: 42px;
-  margin-top: 50px;
-  color: #222;
-  text-align: center;
+    font-size: 36px;
+    letter-spacing: 0.18em;
+    font-family: "Noto Sans JP", Meiryo, sans-serif;
+    font-weight: 500;
+    margin-bottom: 42px;
+    margin-top: 50px;
+    color: #222;
+    text-align: center;
 }
 
 .webpromo__desc {
-  font-size: 15px;
-  color: #222;
-  line-height: 2.1;
-  text-align: justify;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  padding: 0 22px;
+    font-size: 15px;
+    color: #222;
+    line-height: 2.1;
+    text-align: justify;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    padding: 0 22px;
 }
 
 .resultsSec {
-  width: 1280px;
-  margin: 48px auto 0 auto;
-  position: relative;
-  z-index: 2;
-  /* text-align: left; */
+    width: 1280px;
+    margin: 48px auto 0 auto;
+    position: relative;
+    z-index: 2;
+    /* text-align: left; */
 }
 
 .resultsBox {
-  position: relative;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  aspect-ratio: 16/9;
-  min-height: 480px;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    min-height: 480px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .resultsBox__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 18px;
-  z-index: 1;
-  box-shadow: 0 9px 32px #0003;
-  display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    z-index: 1;
+    box-shadow: 0 9px 32px #0003;
+    display: block;
 }
 
 .resultsBox__content {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  padding: 44px 40px 32px 44px;
-  display: grid;
-  grid-template-areas:
-    "title title descTop"
-    "company img descRight";
-  grid-template-columns: 1fr 340px 1.1fr;
-  grid-template-rows: 110px 1fr;
-  gap: 0 26px;
-  align-items: start;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 44px 40px 32px 44px;
+    display: grid;
+    grid-template-areas:
+        "title title descTop"
+        "company img descRight";
+    grid-template-columns: 1fr 340px 1.1fr;
+    grid-template-rows: 110px 1fr;
+    gap: 0 26px;
+    align-items: start;
 }
 
 .resultsBox__header {
-  grid-area: title;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 18px;
+    grid-area: title;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 18px;
 }
+
 .resultsBox__title {
-  font-family: "Playfair Display", serif;
-  font-size: 75px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: .04em;
-  margin: 0;
-  line-height: 0.95;
+    font-family: "Playfair Display", serif;
+    font-size: 75px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .04em;
+    margin: 0;
+    line-height: 0.95;
 }
+
 .resultsBox__subtitle {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 21px;
-  color: #fff;
-  letter-spacing: .15em;
-  margin-bottom: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 21px;
+    color: #fff;
+    letter-spacing: .15em;
+    margin-bottom: 0;
 }
 
 .resultsBox__descTop {
-  grid-area: descTop;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 15px;
-  color: #fff;
-  line-height: 2;
-  margin-top: 10px;
-  text-align: left;
-  max-width: 500px;
-  opacity: 0.95;
+    grid-area: descTop;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 15px;
+    color: #fff;
+    line-height: 2;
+    margin-top: 10px;
+    text-align: left;
+    max-width: 500px;
+    opacity: 0.95;
 }
 
 .resultsBox__company {
-  grid-area: company;
-  position: relative;
-  margin-top: 18px;
-  z-index: 3;
+    grid-area: company;
+    position: relative;
+    margin-top: 18px;
+    z-index: 3;
 }
+
 .resultsBox__company-bubble {
-  position: absolute;
-  left: -24px; top: 10px; z-index: 2;
-  width: 210px; height: 80px;
-  background: rgba(255,255,255,.12);
-  border-radius: 50% 44% 50% 54%;
-  display:inline-block;
-  pointer-events: none;
+    position: absolute;
+    left: -24px;
+    top: 10px;
+    z-index: 2;
+    width: 210px;
+    height: 80px;
+    background: rgba(255, 255, 255, .12);
+    border-radius: 50% 44% 50% 54%;
+    display: inline-block;
+    pointer-events: none;
 }
+
 .resultsBox__company-head {
-  position: relative;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 22px;
-  color: #fff;
-  margin-left: 15px;
-  font-weight: 700;
-  z-index: 3;
+    position: relative;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 22px;
+    color: #fff;
+    margin-left: 15px;
+    font-weight: 700;
+    z-index: 3;
 }
+
 .resultsBox__company-name {
-  display: block;
-  font-size: 21px;
-  color: #fff;
-  margin-top: 7px;
-  margin-left: 14px;
-  z-index: 3;
-  font-weight: 400;
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
+    display: block;
+    font-size: 21px;
+    color: #fff;
+    margin-top: 7px;
+    margin-left: 14px;
+    z-index: 3;
+    font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.5;
 }
 
 .resultsBox__img {
-  grid-area: img;
-  width: 295px;
-  margin: 100px 0 0 0;
-  border-radius: 11px;
-  transform: rotate(-5deg) skewY(-2deg);
-  z-index: 5;
-  position: relative;
-  left: 36px;
+    grid-area: img;
+    width: 295px;
+    margin: 100px 0 0 0;
+    border-radius: 11px;
+    transform: rotate(-5deg) skewY(-2deg);
+    z-index: 5;
+    position: relative;
+    left: 36px;
 }
 
 .resultsBox__descRight {
-  grid-area: descRight;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 15px;
-  color: #fff;
-  line-height: 2;
-  margin-top: 300px;
-  text-align: left;
-  max-width: 320px;
-  opacity: 0.95;
+    grid-area: descRight;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 15px;
+    color: #fff;
+    line-height: 2;
+    margin-top: 300px;
+    text-align: left;
+    max-width: 320px;
+    opacity: 0.95;
+}
+
+.durationSec {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    z-index: 2;
+    padding: 34px 0 60px;
+}
+
+/* title outside the bg box */
+.durationSec__titleWrap {
+    width: 1280px;
+    max-width: 95vw;
+    margin: 0 auto 18px;
+    position: relative;
+    z-index: 3;
+}
+
+.durationSec__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 92px;
+    font-weight: 600;
+    line-height: .9;
+    letter-spacing: .02em;
+    color: #111;
+}
+
+.durationSec__sub {
+    position: absolute;
+    left: 400px;
+    top: 54px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 18px;
+    letter-spacing: .12em;
+    color: #222;
+}
+
+/* bg box */
+.durationSec__box {
+    position: relative;
+    width: 1280px;
+    max-width: 95vw;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0;
+    min-height: 880px;
+}
+
+.durationSec__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+}
+
+.durationSec__content {
+    position: relative;
+    z-index: 2;
+    padding: 110px 72px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.durationItem {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 34px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(70, 70, 70, .30);
+}
+
+.durationItem::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 62px;
+    height: 2px;
+    background: linear-gradient(180deg, #f2d25d 0%, rgba(242, 210, 93, 0) 100%);
+    pointer-events: none;
+}
+
+.durationItem__date {
+    width: 88px;
+    flex: 0 0 88px;
+    text-align: center;
+    line-height: .9;
+    font-family: "Playfair Display", serif;
+    color: #111;
+}
+
+.durationItem__year {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.durationItem__month {
+    display: block;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.durationItem__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.durationItem__head {
+    margin: 0 0 10px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.durationItem__dot {
+    width: 26px;
+    height: 34px;
+    flex: 0 0 26px;
+    background: linear-gradient(135deg, #fff7c8 0%, #f2d25d 42%, #ffd94a 100%);
+    border-radius: 55% 45% 55% 45% / 62% 38% 62% 38%;
+    transform: translateX(6px) rotate(35deg);
+    box-shadow:
+        inset -6px -8px 12px rgba(255, 165, 0, .18),
+        0 0 0 1px rgba(255, 255, 255, .18);
+    display: inline-block;
+    position: relative;
+    left: 20px;
+}
+
+.durationItem__label {
+    position: relative;
+    z-index: 2;
+}
+
+.durationItem__text {
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    color: rgba(20, 20, 20, .92);
+    letter-spacing: .06em;
+}
+
+.divider {
+    border-top: 1px solid rgba(70, 70, 70, .30);
+}
+
+
+.job {
+    background: #fff;
+    padding: 60px 0 70px;
+    overflow: hidden;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: #111;
+}
+
+.job__inner {
+    width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+}
+
+.job__visual {
+    position: relative;
+    min-height: 560px;
+}
+
+.job__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 150px;
+    font-weight: 400;
+    line-height: .85;
+    letter-spacing: .02em;
+    background: linear-gradient(90deg, #6c3d12 0%, #e7aa2f 55%, #c98a13 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 3;
+    margin-left: 20px;
+    bottom: 30px;
+}
+
+.job__blocks {
+    position: absolute;
+    left: 40px;
+    top: 120px;
+    width: 420px;
+    height: 360px;
+    z-index: 1;
+}
+
+.job__block {
+    position: absolute;
+    background: #d9d9d9;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
+}
+
+.job__block--1 {
+    width: 200px;
+    height: 330px;
+    left: 0;
+    top: 0;
+}
+
+.job__block--2 {
+    width: 130px;
+    height: 190px;
+    left: 250px;
+    top: 140px;
+}
+
+
+.job__content {
+    padding-top: 40px;
+    max-width: 620px;
+}
+
+.job__copy {
+    margin: 0 0 22px;
+    font-size: 22px;
+    line-height: 1.8;
+    letter-spacing: .08em;
+    font-weight: 500;
+    color: #222;
+}
+
+.job__copy::first-line {
+    color: #d89a22;
+}
+
+.job__desc {
+    font-size: 13px;
+    line-height: 2;
+    color: #444;
+    letter-spacing: .04em;
+    margin-bottom: 28px;
+}
+
+.job__actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-start;
+}
+
+.job__btn1 {
+    width: 170px;
+    height: 44px;
+    border: 1px solid #999;
+    color: #111;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 0 22px;
+    background: #fff;
+    transition: .2s ease;
+    font-family: "Noto Sans JP", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.job__btnText {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: .06em;
+    line-height: 1;
+}
+
+.job__btnArrow {
+    padding-left: 12px;
+    margin-left: 12px;
+    border-left: 1px solid #999;
+    line-height: 1;
+}
+
+.job__btn1:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.job__btn1:hover .job__btnArrow {
+    border-left-color: rgba(255, 255, 255, .35);
+}
+
+.job__btn1:hover .job__btnText,
+.job__btn1:hover .job__btnArrow {
+    color: #fff;
+}
+
+.section-separator {
+  position: relative;
+  width: 100%;
+  height: 0;
+  z-index: 2;
+}
+
+.section-separator img {
+  position: absolute;
+  left: 300px;
+  top: -190px; /* chỉnh để mars nằm cắt giữa 2 section */
+  width: 360px;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
 }
