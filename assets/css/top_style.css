@@ -414,117 +414,132 @@ img {
 }
 
 /* =========================
-   JOB NAV
+   PART 3 BUTTONS
 ========================= */
-.job-nav {
-    width: min(1280px, 92%);
-    margin: 40px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+.sec3-btns {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    min-height: 320px;
+    padding-top: 50px;
+    padding-bottom: 28px;
 }
 
-.job-nav a {
+.sec3-btns .videoSec__inner {
+    width: 1280px;
+    margin: 0 auto;
     position: relative;
+    z-index: 2;
+}
 
-    min-height: 108px;
-    padding: 22px 28px;
+.videoJobs {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+}
 
-    border: 1px solid rgba(255, 255, 255, .45);
-    background: rgba(255, 255, 255, .02);
+.videoJobs__btn {
+    position: relative;
+    width: 320px;
+    height: 70px;
+    border: 1.5px solid #111;
+    background: transparent;
+    color: #111;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: background .18s, color .2s, border .2s;
+    border-radius: 0;
+}
 
+.videoJobs__btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 54px;
+    width: 1px;
+    height: 42px;
+    background: black;
+    transform: translateY(-50%);
+}
+
+.videoJobs__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    transition: .28s ease;
-    overflow: hidden;
+    line-height: 1;
 }
 
-/* hover trắng */
-.job-nav a:hover {
-    background: #fff;
-    border-color: #fff;
-}
-
-/* title */
-.job-nav span {
-    display: block;
-
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 42px;
+.videoJobs__en {
+    font-family: "Noto Sans JP", "Noto Sans Japan", sans-serif;
+    font-size: 24px;
     font-style: italic;
     font-weight: 500;
-    line-height: 1;
-
-    letter-spacing: .015em;
-    color: #fff;
-
-    margin-bottom: 10px;
-    transition: .28s ease;
-}
-
-.job-nav small {
-    font-size: 15px;
-    color: #fff;
     letter-spacing: .08em;
-    transition: .28s ease;
+    white-space: nowrap;
 }
 
-/* text đổi màu khi hover */
-.job-nav a:hover span,
-.job-nav a:hover small {
-    color: #04052B;
+.videoJobs__ja {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    opacity: .9;
+    white-space: nowrap;
 }
 
-/* vertical divider */
-.job-nav a::before {
-    content: "";
-    position: absolute;
-
-    right: 74px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 1px;
-    height: 56%;
-
-    background: rgba(255, 255, 255, .45);
-    transition: .28s ease;
+.videoJobs__arrow {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    transition: opacity 300ms ease-in-out;
+    cursor: pointer;
+    transform: translateX(20px) translateY(-8px);
 }
 
-.job-nav a:hover::before {
-    background: rgba(4, 5, 43, .2);
+.videoJobs__arrow svg {
+    width: 100%;
+    height: 100%;
 }
 
-/* arrow */
-.job-nav a::after {
-    content: "";
-    position: absolute;
-
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 22px;
-    height: 10px;
-
-    background: #fff;
-
-    clip-path: polygon(0 40%,
-            70% 40%,
-            70% 0,
-            100% 50%,
-            70% 100%,
-            70% 60%,
-            0 60%);
-
-    transition: .28s ease;
+.videoJobs__arrow path {
+    stroke: black;
+    stroke-opacity: 0.9;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
 }
 
-.job-nav a:hover::after {
-    background: #04052B;
+.videoJobs__btn:hover .videoJobs__arrow path {
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.videoJobs__btn:hover .videoJobs__arrow {
+    opacity: 1;
+}
+
+.videoJobs__btn:hover::after {
+    background: rgba(255, 255, 255, .95);
+}
+
+.videoJobs__btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
 }
 
 /* ===== OCCUPATIONS ===== */
@@ -1951,7 +1966,7 @@ img {
     width: 100%;
     height: 360px;
 
-    object-fit: cover;                                                                                                                                
+    object-fit: cover;
     object-position: center top;
 }
 

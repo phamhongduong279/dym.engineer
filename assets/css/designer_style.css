@@ -554,7 +554,7 @@ small {
     min-height: 1200px;
     z-index: 1;
     padding-bottom: 80px;
-    
+
 }
 
 .ivs-bg {
@@ -909,6 +909,8 @@ small {
     margin: 0 auto;
 }
 
+
+
 /* ---------- Part 1: capsule plate + thumbnail ---------- */
 .videoSec {
     padding: 120px 0 120px;
@@ -1168,27 +1170,6 @@ small {
     width: 100%;
 }
 
-/* button */
-.videoJobs__btn {
-    position: relative;
-
-    width: 360px;
-    /* fixed width like mock */
-    height: 72px;
-
-    border: 1px solid rgba(255, 255, 255, .55);
-    background: transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 28px;
-    color: rgba(255, 255, 255, .92);
-    text-decoration: none;
-
-    transition: .25s ease;
-}
 
 /* divider */
 .videoJobs__btn::after {
@@ -1200,7 +1181,7 @@ small {
     width: 1px;
     height: 42px;
 
-    background: rgba(255, 255, 255, .35);
+    background: black;
     transform: translateY(-50%);
 }
 
@@ -1231,24 +1212,83 @@ small {
 
 .videoJobs__arrow {
     flex-shrink: 0;
-    font-size: 22px;
-    line-height: 1;
-    opacity: .95;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    transition: opacity 300ms ease-in-out;
+    cursor: pointer;
+    transform: translateX(20px) translateY(-8px);
+
 }
 
-/* hover -> white */
-.videoJobs__btn:hover {
-    background: #fff;
-    color: #04052B;
-    border-color: rgba(255, 255, 255, .95);
+
+
+.videoJobs__arrow svg {
+    width: 100%;
+    height: 100%;
 }
+
+.videoJobs__arrow path {
+    stroke: black;
+    stroke-opacity: 0.9;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.videoJobs__btn:hover .videoJobs__arrow path {
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.videoJobs__btn:hover .videoJobs__arrow {
+    opacity: 1;
+}
+
 
 .videoJobs__btn:hover::after {
-    background: rgba(4, 5, 43, .18);
+    background: rgba(255, 255, 255, .95);
+}
+
+.videoJobs {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    width: 100%;
+}
+
+.videoJobs__btn {
+    width: 320px;
+    height: 70px;
+    border: 1.5px solid #111;
+    background: transparent;
+    color: #111;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: background .18s, color .2s, border .2s;
+    border-radius: 0;
+    position: relative;
+}
+
+.videoJobs__btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
 }
 
 
-/* đảm bảo không có margin default gây lệch */
+
+
+
 html,
 body {
     margin: 0;
@@ -1346,61 +1386,7 @@ body {
     z-index: 2;
 }
 
-.videoJobs {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    width: 100%;
-}
 
-.videoJobs__btn {
-    width: 320px;
-    height: 70px;
-    border: 1.5px solid #111;
-    background: transparent;
-    color: #111;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 20px;
-    letter-spacing: .08em;
-    text-decoration: none;
-    transition: background .18s, color .2s, border .2s;
-    border-radius: 0;
-    position: relative;
-}
-
-
-
-
-.videoJobs__btn:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
-}
-
-.videoJobs__arrow {
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 18px;
-}
-
-.videoJobs__en {
-    font-family: "Playfair Display", serif;
-    font-size: 22px;
-    font-weight: 500;
-    font-style: italic;
-    letter-spacing: .09em;
-}
-
-.videoJobs__ja {
-    margin-left: 8px;
-    font-size: 13px;
-    color: inherit;
-    font-weight: 500;
-}
 
 .webpromo {
     width: 1280px;
@@ -1878,6 +1864,12 @@ body {
     justify-content: flex-start;
 }
 
+.job__actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-start;
+}
+
 .job__btn1 {
     width: 170px;
     height: 44px;
@@ -1887,59 +1879,107 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px 0 22px;
+    padding: 0 16px;
     background: #fff;
     transition: .2s ease;
     font-family: "Noto Sans JP", sans-serif;
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
-.job__btnText {
+/* text */
+.job__content1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+}
+
+.job__en {
     font-family: "Playfair Display", serif;
     font-size: 20px;
     font-style: italic;
     letter-spacing: .06em;
     line-height: 1;
+    white-space: nowrap;
 }
 
-.job__btnArrow {
-    padding-left: 12px;
+/* arrow wrapper */
+.job__arrow {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
     margin-left: 12px;
-    border-left: 1px solid #999;
-    line-height: 1;
+    padding-left: 12px;
+    box-sizing: border-box;
 }
 
+/* divider */
+.job__arrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    /* hở trên và dưới */
+    background: #999;
+    transform: translateY(-50%);
+}
+
+.job__arrow svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.job__arrow path {
+    stroke: #111;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+/* hover */
 .job__btn1:hover {
     background: #111;
     color: #fff;
     border-color: #111;
 }
 
-.job__btn1:hover .job__btnArrow {
-    border-left-color: rgba(255, 255, 255, .35);
+.job__btn1:hover .job__arrow::before {
+    background: rgba(255, 255, 255, .35);
 }
 
-.job__btn1:hover .job__btnText,
-.job__btn1:hover .job__btnArrow {
-    color: #fff;
+.job__btn1:hover .job__arrow path {
+    stroke: #fff;
 }
+
+
 
 .section-separator {
-  position: relative;
-  width: 100%;
-  height: 0;
-  z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 0;
+    z-index: 2;
 }
 
 .section-separator img {
-  position: absolute;
-  left: 300px;
-  top: -190px; /* chỉnh để mars nằm cắt giữa 2 section */
-  width: 360px;
-  height: auto;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-  z-index: 2;
+    position: absolute;
+    left: 300px;
+    top: -190px;
+    /* chỉnh để mars nằm cắt giữa 2 section */
+    width: 360px;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
 }

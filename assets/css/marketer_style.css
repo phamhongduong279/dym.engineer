@@ -1803,134 +1803,124 @@ small {
     margin: 0 auto;
 }
 
-/* ---------- Part 1: capsule plate + thumbnail ---------- */
-.videoSec {
-    padding: 120px 0 120px;
+/* ---------- Part 3: 3 buttons ---------- */
+.btn {
+    background: #000;
+    padding: 54px 0 64px;
 }
 
-/* P1 wrapper */
-.videoHero {
-    position: relative;
-    aspect-ratio: 1280 / 360;
-    height: auto;
+.btn .videoSec__inner {
+    width: 1280px;
+    margin: 0 auto;
 }
 
-.videoHero__plate {
-    position: absolute;
-    inset: 0;
-    background: url("/assets/image/marketer/job-content.webp") no-repeat center center;
-    background-size: cover;
-    border-radius: 220px;
-    transform: scale(0.965);
-    transform-origin: center;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.videoHero__content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 500px 1fr;
-    gap: 44px;
-    padding: 56px 92px;
-    align-items: center;
-}
-
-.videoHero__thumbWrap {
+.videoJobs {
+    margin-top: 0;
     display: flex;
-    align-items: flex-end;
-}
-
-.videoHero__thumb {
-    width: 450px;
-    height: 250px;
-    object-fit: cover;
-    border: 6px solid rgba(255, 255, 255, .85);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
-    background: #fff;
-    margin-left: 100px;
-}
-
-.videoHero__text {
-    padding-top: 0;
-    padding-left: 0;
-    position: relative;
-}
-
-.videoHero__big {
-    left: -50px;
-    top: -40px;
-    margin-bottom: 0;
-    line-height: .9;
-    transform: translate(-28px, -6px);
-    font-size: 90px;
-    font-weight: bold;
-    position: relative;
-    z-index: 5;
-
-    color: transparent;
-    background-image: linear-gradient(180deg, #F67500 0%, #D97619 55%, #AF783F 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow: 0 10px 18px rgba(0, 0, 0, .22);
-    opacity: .88;
-    /* giống ảnh: chữ to nhưng hơi chìm */
-}
-
-.videoHero__title {
-    margin: 0 0 14px;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: .08em;
-    color: rgba(255, 255, 255, 0.96);
-}
-
-.videoHero__desc {
-    margin: 0;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 2.0;
-    letter-spacing: .06em;
-    color: rgba(255, 255, 255, .88);
-    max-width: 520px;
-}
-
-/* ===== Part 2: 4 egg buttons (FINAL CSS ONLY) ===== */
-.videoNav {
-    margin-top: 90px;
-    margin-bottom: 90px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    /* khoảng cách giữa các quả */
+    justify-content: center;
     align-items: center;
-    transform: scale(1);
-    transform-origin: center;
+    gap: 28px;
+    width: 100%;
 }
 
-/* clickable area */
-.videoNav__btn {
+.videoJobs__btn {
     position: relative;
-    height: 190px;
-    /* nhỏ lại để thoáng */
-    border: 0;
+    width: 320px;
+    height: 70px;
+    border: 1.5px solid #111;
     background: transparent;
-
-    color: #F67500;
+    color: #111;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    letter-spacing: .08em;
     text-decoration: none;
+    transition: background .18s, color .2s, border .2s;
+    border-radius: 0;
+}
 
+.videoJobs__btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 54px;
+    width: 1px;
+    height: 42px;
+    background: black;
+    transform: translateY(-50%);
+}
+
+.videoJobs__content {
     display: flex;
     flex-direction: column;
+    line-height: 1;
+}
+
+.videoJobs__en {
+    font-family: "Noto Sans JP", "Noto Sans Japan", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: .08em;
+    white-space: nowrap;
+}
+
+.videoJobs__ja {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    opacity: .9;
+    white-space: nowrap;
+}
+
+.videoJobs__arrow {
+    flex-shrink: 0;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    transition: opacity 300ms ease-in-out;
+    cursor: pointer;
+    transform: translateX(20px) translateY(-8px);
+}
 
-    overflow: visible;
+.videoJobs__arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+.videoJobs__arrow path {
+    stroke: black;
+    stroke-opacity: 0.9;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.videoJobs__btn:hover .videoJobs__arrow path {
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.videoJobs__btn:hover .videoJobs__arrow {
+    opacity: 1;
+}
+
+.videoJobs__btn:hover::after {
+    background: rgba(255, 255, 255, .95);
+}
+
+.videoJobs__btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
     transition: .25s ease;
 }
 
