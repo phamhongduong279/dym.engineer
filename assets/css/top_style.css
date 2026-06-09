@@ -207,7 +207,7 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 16px;
-    min-width: 248px;
+    width: 380px;
     justify-content: center;
     padding: 12px 28px;
     border: 1px solid rgba(255, 255, 255, .68);
@@ -216,6 +216,7 @@ img {
     color: #fff;
     letter-spacing: .08em;
     transition: .25s;
+    box-sizing: border-box;
 }
 
 .btn-main i {
@@ -223,16 +224,63 @@ img {
     font-style: italic;
     font-weight: 700;
     font-size: 17px;
+    line-height: 1;
 }
 
 .btn-main span {
     font-size: 13px;
+    line-height: 1;
+}
+
+/* arrow + divider wrapper */
+.btn-main .arrow {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 100%;
+    flex-shrink: 0;
+    margin-left: 8px;
+    padding-left: 12px;
+}
+
+/* divider */
+.btn-main .arrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 18px;
+    background: rgba(255, 255, 255, .55);
+    transform: translateY(-50%);
+    transition: background .25s;
+}
+
+.btn-main .arrow svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.btn-main .arrow path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .25s;
 }
 
 .btn-main:hover {
     background: #fff;
     color: var(--navy);
     box-shadow: 0 0 24px rgba(0, 204, 255, .38);
+}
+
+.btn-main:hover .arrow::before {
+    background: rgba(4, 5, 43, .18);
 }
 
 /* ===== COMMON DECORATION ===== */
@@ -416,6 +464,9 @@ img {
 /* =========================
    PART 3 BUTTONS
 ========================= */
+/* =========================
+   PART 3 BUTTONS
+========================= */
 .sec3-btns {
     position: relative;
     width: 100vw;
@@ -425,6 +476,7 @@ img {
     min-height: 320px;
     padding-top: 50px;
     padding-bottom: 28px;
+    background: #02032b;
 }
 
 .sec3-btns .videoSec__inner {
@@ -447,9 +499,9 @@ img {
     position: relative;
     width: 320px;
     height: 70px;
-    border: 1.5px solid #111;
-    background: transparent;
-    color: #111;
+    border: 1.5px solid rgba(255, 255, 255, .75);
+    background: #02032b;
+    color: #fff;
     padding: 0 30px;
     display: flex;
     align-items: center;
@@ -460,6 +512,7 @@ img {
     text-decoration: none;
     transition: background .18s, color .2s, border .2s;
     border-radius: 0;
+    box-sizing: border-box;
 }
 
 .videoJobs__btn::after {
@@ -469,8 +522,9 @@ img {
     right: 54px;
     width: 1px;
     height: 42px;
-    background: black;
+    background: rgba(255, 255, 255, .55);
     transform: translateY(-50%);
+    transition: background .2s ease;
 }
 
 .videoJobs__content {
@@ -504,7 +558,7 @@ img {
     justify-content: center;
     width: 40px;
     height: 40px;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 300ms ease-in-out;
     cursor: pointer;
     transform: translateX(20px) translateY(-8px);
@@ -513,33 +567,30 @@ img {
 .videoJobs__arrow svg {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .videoJobs__arrow path {
-    stroke: black;
-    stroke-opacity: 0.9;
+    stroke: #fff;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
-}
-
-.videoJobs__btn:hover .videoJobs__arrow path {
-    stroke: rgba(255, 255, 255, 0.9);
-}
-
-.videoJobs__btn:hover .videoJobs__arrow {
-    opacity: 1;
-}
-
-.videoJobs__btn:hover::after {
-    background: rgba(255, 255, 255, .95);
+    transition: stroke .2s ease;
 }
 
 .videoJobs__btn:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
+    background: #fff;
+    color: #02032b;
+    border-color: #fff;
+}
+
+.videoJobs__btn:hover::after {
+    background: rgba(2, 3, 43, .25);
+}
+
+.videoJobs__btn:hover .videoJobs__arrow path {
+    stroke: #02032b;
 }
 
 /* ===== OCCUPATIONS ===== */
@@ -601,65 +652,76 @@ img {
     display: flex;
     flex-direction: row;
     gap: 30px;
-
     margin-top: 120px;
 }
 
 .occupation-actions a {
     position: relative;
-
     width: 240px;
     height: 58px;
     padding: 0 70px 0 42px;
-
     border: 1px solid rgba(255, 255, 255, .62);
     color: #fff;
     background: transparent;
-
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
     font-family: "League Spartan", sans-serif;
     font-size: 32px;
     font-style: italic;
     line-height: 1;
     letter-spacing: .02em;
-
+    text-decoration: none;
     transition: .25s ease;
+    box-sizing: border-box;
 }
 
+.occupation-actions__text {
+    line-height: 1;
+}
+
+/* divider */
 .occupation-actions a::before {
     content: "";
     position: absolute;
     right: 56px;
     top: 50%;
     transform: translateY(-50%);
-
     width: 1px;
-    height: 48%;
+    height: 30px;
     background: rgba(255, 255, 255, .55);
+    transition: background .25s ease;
 }
 
-.occupation-actions a::after {
-    content: "";
-    position: absolute;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-
+/* arrow icon */
+.occupation-actions__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 22px;
-    height: 9px;
-    background: #fff;
-
-    clip-path: polygon(0 42%,
-            72% 42%,
-            72% 8%,
-            100% 50%,
-            72% 92%,
-            72% 58%,
-            0 58%);
+    height: 22px;
+    color: #fff;
+    transform: translateY(30px);
+    transform: translateX(40px);
 }
 
+.occupation-actions__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.occupation-actions__icon path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .25s ease;
+}
+
+/* hover */
 .occupation-actions a:hover {
     background: #fff;
     color: #04052B;
@@ -669,8 +731,8 @@ img {
     background: rgba(4, 5, 43, .25);
 }
 
-.occupation-actions a:hover::after {
-    background: #04052B;
+.occupation-actions a:hover .occupation-actions__icon {
+    color: #04052B;
 }
 
 /* RIGHT */
@@ -1307,78 +1369,86 @@ img {
 .designer-actions {
     display: flex;
     gap: 18px;
-
     transform: translateY(-90px);
 }
 
 .designer-actions a {
     position: relative;
-
     width: 170px;
     height: 42px;
-
-    padding: 0 46px 0 26px;
-
+    padding: 0 16px 0 26px; /* giảm padding phải để không lệch */
     border: 1px solid rgba(255, 255, 255, .58);
-
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
     color: #fff;
-
     font-family: "Noto Sans JP", sans-serif;
     font-size: 24px;
     font-style: italic;
     line-height: 1;
-
     transition: .25s ease;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
+.designer-actions__text {
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* divider */
 .designer-actions a::before {
     content: "";
     position: absolute;
-
     right: 34px;
     top: 50%;
-
     transform: translateY(-50%);
-
     width: 1px;
-    height: 50%;
-
+    height: 18px; /* ngắn hơn, cân với text */
     background: rgba(255, 255, 255, .45);
+    transition: background .25s ease;
 }
 
-.designer-actions a::after {
-    content: "";
-    position: absolute;
-
-    right: 14px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 18px;
-    height: 8px;
-
-    background: #fff;
-
-    clip-path: polygon(0 42%,
-            72% 42%,
-            72% 8%,
-            100% 50%,
-            72% 92%,
-            72% 58%,
-            0 58%);
+/* icon */
+.designer-actions__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    transform: translateY(-1px);
+    margin-left: 10px;
 }
 
+.designer-actions__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.designer-actions__icon path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .25s ease;
+}
+
+/* hover */
 .designer-actions a:hover {
     background: #fff;
     color: #04052B;
 }
 
-.designer-actions a:hover::after {
-    background: #04052B;
+.designer-actions a:hover::before {
+    background: rgba(4, 5, 43, .25);
+}
+
+.designer-actions a:hover .designer-actions__icon {
+    color: #04052B;
 }
 
 /* RIGHT */
