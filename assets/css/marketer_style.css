@@ -1763,7 +1763,7 @@ small {
 
 .schedule__pill {
     width: 360px;
-    height: 140px;
+    height: 160px;
     border-radius: 999px;
     background: rgba(255, 255, 255, .9);
 }
@@ -1812,8 +1812,7 @@ small {
 .videoSec {
     padding: 80px 0 90px;
     font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    background: #fff;
-    color: #111;
+    background-color: #fff;
     /* base text on white */
 }
 
@@ -1827,6 +1826,7 @@ small {
 /* ---------- Part 1: capsule plate + thumbnail ---------- */
 .videoSec {
     padding: 120px 0 120px;
+    padding-bottom: 20px;
 }
 
 /* P1 wrapper */
@@ -1923,12 +1923,11 @@ small {
 
 /* ===== Part 2: 4 egg buttons (FINAL CSS ONLY) ===== */
 .videoNav {
-    margin-top: 90px;
+    margin-top: 40px;
     margin-bottom: 90px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    /* khoảng cách giữa các quả */
+    gap: 12px;
     align-items: center;
     transform: scale(1);
     transform-origin: center;
@@ -1937,8 +1936,7 @@ small {
 /* clickable area */
 .videoNav__btn {
     position: relative;
-    height: 190px;
-    /* nhỏ lại để thoáng */
+    height: 228px;
     border: 0;
     background: transparent;
 
@@ -1961,7 +1959,7 @@ small {
     position: absolute;
 
 
-    inset: -16px 22px;
+    inset: -26px 8px;
 
     /* egg-ish blob */
     border-radius: 58% 42% 62% 38% / 55% 48% 52% 45%;
@@ -1998,20 +1996,31 @@ small {
 
 /* text styles */
 .videoNav__icon {
-    font-size: 26px;
-    margin-bottom: 2px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
     opacity: .95;
+}
+
+.videoNav__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .videoNav__en {
     font-family: "League Spartan", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: .08em;
 }
 
 .videoNav__jp {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: .10em;
     opacity: .9;
@@ -2060,7 +2069,7 @@ small {
     position: absolute;
 
 
-    inset: -16px 22px;
+    inset: -26px 8px;
 
     /* egg-ish blob */
     border-radius: 58% 42% 62% 38% / 55% 48% 52% 45%;
@@ -2096,20 +2105,31 @@ small {
 
 /* text styles */
 .videoNav__icon {
-    font-size: 26px;
-    margin-bottom: 2px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
     opacity: .95;
+}
+
+.videoNav__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .videoNav__en {
     font-family: "League Spartan", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: .08em;
 }
 
 .videoNav__jp {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: .10em;
     opacity: .9;

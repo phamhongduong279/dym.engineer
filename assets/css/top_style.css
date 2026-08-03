@@ -235,14 +235,14 @@ img {
 /* arrow + divider wrapper */
 .btn-main .arrow {
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
+    width: 62px;
     height: 100%;
     flex-shrink: 0;
-    margin-left: 8px;
-    padding-left: 12px;
+    margin-left: 10px;
+    padding-left: 0;
 }
 
 /* divider */
@@ -262,6 +262,7 @@ img {
     width: 18px;
     height: 18px;
     display: block;
+    transform: translateY(-2px);
 }
 
 .btn-main .arrow path {
@@ -1043,21 +1044,23 @@ img {
     content: "";
     position: absolute;
     left: 11px;
-    top: 17px;
+    top: 21px;
 
-    width: 14px;
+    width: 13px;
     height: 1px;
     background: #fff;
+    transform: rotate(-45deg);
+    transform-origin: left center;
 }
 
 .person-arrow::after {
     content: "";
     position: absolute;
     right: 10px;
-    top: 12px;
+    top: 9px;
 
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
 
     border-top: 1px solid #fff;
     border-right: 1px solid #fff;
@@ -1792,18 +1795,20 @@ img {
 .news-more-btn {
     position: relative;
 
-    width: 300px;
-    height: 42px;
+    width: 380px;
+    height: 80px;
 
     margin: 48px auto 0;
 
     border: 1px solid rgba(255, 255, 255, .55);
     background: transparent;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto 72px;
     align-items: center;
     justify-content: center;
     gap: 18px;
+    padding-left: 36px;
 
     color: #fff;
 
@@ -1815,6 +1820,7 @@ img {
 .news-more-btn:hover {
     background: #fff;
     border-color: #fff;
+    color: #04052B;
 }
 
 /* text */
@@ -1833,11 +1839,11 @@ img {
     content: "";
     position: absolute;
 
-    right: 56px;
+    right: 72px;
     top: 50%;
 
     width: 1px;
-    height: 52%;
+    height: 42px;
 
     transform: translateY(-50%);
 
@@ -1858,26 +1864,21 @@ img {
     right: 24px;
     top: 50%;
 
-    width: 20px;
-    height: 8px;
+    width: 18px;
+    height: 18px;
 
     transform: translateY(-50%);
 
-    background: #fff;
-
-    clip-path: polygon(0 42%,
-            72% 42%,
-            72% 8%,
-            100% 50%,
-            72% 92%,
-            72% 58%,
-            0 58%);
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
 
     transition: .28s ease;
 }
 
 .news-more-btn:hover::after {
-    background: #04052B;
+    border-top-color: currentColor;
+    border-right-color: currentColor;
 }
 
 /* ===== ACHIEVEMENT RESULTS ===== */

@@ -90,38 +90,44 @@
                     この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。<br>
                     文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。 </p>
                 <div class="job-buttons">
-                    <a href="#" class="job-button is-active">
+                    <a href="./engineer.html" class="job-button is-active">
                         <div class="job-button__content">
                             <span class="job-button__en">ENGINEER</span>
                             <span class="job-button__ja">エンジニア</span>
                         </div>
 
-                        <span class="job-button__arrow">→</span>
+                        <svg class="job-button__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 48 H50 L36 35" />
+                        </svg>
                     </a>
 
-                    <a href="#" class="job-button">
+                    <a href="./designer.html" class="job-button">
                         <div class="job-button__content">
                             <span class="job-button__en">DESIGNER</span>
                             <span class="job-button__ja">デザイナー</span>
                         </div>
 
-                        <span class="job-button__arrow">→</span>
+                        <svg class="job-button__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 48 H50 L36 35" />
+                        </svg>
                     </a>
 
-                    <a href="#" class="job-button">
+                    <a href="./marketer.html" class="job-button">
                         <div class="job-button__content">
                             <span class="job-button__en">MARKETER</span>
                             <span class="job-button__ja">マーケター</span>
                         </div>
 
-                        <span class="job-button__arrow">→</span>
+                        <svg class="job-button__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 48 H50 L36 35" />
+                        </svg>
                     </a>
                 </div>
 
-                <div class="department-tabs">
-                    <button class="department-tab is-active">DX ソリューション部</button>
-                    <button class="department-tab">WEB 事業部</button>
-                    <button class="department-tab">HR Tech 事業部</button>
+                <div class="department-tabs" role="tablist" aria-label="Engineer departments">
+                    <button class="department-tab is-active" type="button" data-department="dx" role="tab" aria-selected="true">DX ソリューション部</button>
+                    <button class="department-tab" type="button" data-department="web" role="tab" aria-selected="false">WEB 事業部</button>
+                    <button class="department-tab" type="button" data-department="hrtech" role="tab" aria-selected="false">HR Tech 事業部</button>
                 </div>
 
                 <div class="about-content">
@@ -131,7 +137,9 @@
                             部署の概要
                         </h2>
 
-                        <p>
+                        <p class="about-text__department" id="departmentAboutName">DX ソリューション部</p>
+
+                        <p id="departmentAboutDesc">
                             当部署では、サービス・プロダクトの開発を通じて、<br>
                             新しい価値の創出と事業の成長を支えています。<br>
                             企画から設計、開発、運用までをチームで担い、<br>
@@ -141,7 +149,7 @@
                         </p>
                     </div>
 
-                    <div class="about-image"></div>
+                    <div class="about-image about-image--dx" id="departmentAboutImage" aria-hidden="true"></div>
                 </div>
             </div>
         </section>
@@ -156,7 +164,9 @@
                     </div>
 
                     <div class="results__content">
-                        <div class="results__media"></div>
+                        <div class="results__media" aria-hidden="true">
+                            <img src="./assets/image/engineer/rectangle.webp" alt="" width="550">
+                        </div>
 
                         <div class="results__card">
                             <h3 class="results__cardTitle">タイトルタイトル</h3>
@@ -166,13 +176,6 @@
                                 この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
                             </p>
                         </div>
-
-                        <!-- <div class="results__sparkles" aria-hidden="true">
-                            <span class="results__spark results__spark--c"></span>
-                            <span class="results__spark results__spark--w1"></span>
-                            <span class="results__spark results__spark--w2"></span>
-                            <span class="results__spark results__spark--w3"></span>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -304,10 +307,16 @@
 
 
                     <div class="job__actions">
-                        <a class="jobBtn" href="#"><span class="jobBtn__text">RECRUIT</span><span
-                                class="jobBtn__arrow">→</span></a>
-                        <a class="jobBtn" href="#"><span class="jobBtn__text">ENTRY</span><span
-                                class="jobBtn__arrow">→</span></a>
+                        <a class="jobBtn" href="#"><span class="jobBtn__text">RECRUIT</span>
+                            <svg class="jobBtn__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 48 H50 L36 35" />
+                            </svg>
+                        </a>
+                        <a class="jobBtn" href="#"><span class="jobBtn__text">ENTRY</span>
+                            <svg class="jobBtn__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 48 H50 L36 35" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -505,62 +514,30 @@
                 <!-- Part 2: 4 circle buttons (hover => blue) -->
                 <div class="videoNav">
                     <a class="videoNav__btn is-active" href="#">
-                        <span class="videoNav__icon">✦</span>
+                        <img class="videoNav__icon" src="./assets/image/engineer/benefits.webp" alt="Benefits icon">
                         <span class="videoNav__en">BENEFITS</span>
                         <span class="videoNav__jp">福利厚生</span>
                     </a>
 
                     <a class="videoNav__btn" href="#">
-                        <span class="videoNav__icon">⏎</span>
+                        <img class="videoNav__icon" src="./assets/image/engineer/entry.webp" alt="Entry icon">
                         <span class="videoNav__en">ENTRY</span>
                         <span class="videoNav__jp">エントリー</span>
                     </a>
 
                     <a class="videoNav__btn" href="#">
-                        <span class="videoNav__icon">◎</span>
+                        <img class="videoNav__icon" src="./assets/image/engineer/requirements.webp" alt="Requirements icon">
                         <span class="videoNav__en">REQUIREMENTS</span>
                         <span class="videoNav__jp">募集要項</span>
                     </a>
 
                     <a class="videoNav__btn" href="#">
-                        <span class="videoNav__icon">✉</span>
+                        <img class="videoNav__icon" src="./assets/image/engineer/contact.webp" alt="Contact icon">
                         <span class="videoNav__en">CONTACT</span>
                         <span class="videoNav__jp">お問い合わせ</span>
                     </a>
                 </div>
 
-                <!-- Part 3: 3 job buttons (hover => white like your existing style)
-                <div class="videoJobs">
-                    <a class="videoJobs__btn is-active" href="#">
-                        <span class="videoJobs__content">
-                            <span class="videoJobs__en">ENGINEER</span>
-                            <span class="videoJobs__ja">エンジニア</span>
-                        </span>
-                        <svg class="videoJobs__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12 48 H50 L36 35" />
-                        </svg>
-                    </a>
-
-                    <a class="videoJobs__btn" href="#">
-                        <span class="videoJobs__content">
-                            <span class="videoJobs__en">DESIGNER</span>
-                            <span class="videoJobs__ja">デザイナー</span>
-                        </span>
-                        <svg class="videoJobs__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12 48 H50 L36 35" />
-                        </svg>
-                    </a>
-
-                    <a class="videoJobs__btn" href="#">
-                        <span class="videoJobs__content">
-                            <span class="videoJobs__en">MARKETER</span>
-                            <span class="videoJobs__ja">マーケター</span>
-                        </span>
-                        <svg class="videoJobs__arrow" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12 48 H50 L36 35" />
-                        </svg>
-                    </a>
-                </div> -->
 
             </div>
         </section>
@@ -633,6 +610,66 @@
         btn.onclick = toggleMenu;
         btn.onkeydown = (e) => { if (e.key === "Enter") toggleMenu(); };
         dropdown.querySelectorAll("a").forEach(a => { a.onclick = () => { dropdown.classList.remove("open"); btn.classList.remove("active"); }; });
+
+        const departmentTabs = document.querySelectorAll(".department-tab");
+        const departmentAboutName = document.getElementById("departmentAboutName");
+        const departmentAboutDesc = document.getElementById("departmentAboutDesc");
+        const departmentAboutImage = document.getElementById("departmentAboutImage");
+        const departmentContent = {
+            dx: {
+                name: "DX ソリューション部",
+                imageClass: "about-image--dx",
+                description: `当部署では、サービス・プロダクトの開発を通じて、<br>
+                            新しい価値の創出と事業の成長を支えています。<br>
+                            企画から設計、開発、運用までをチームで担い、<br>
+                            スピード感を持って課題解決に取り組んでいます。<br>
+                            それぞれの専門性を活かしながら、<br>
+                            互いにアイデアを出し合い、より良いサービスを追求しています。`
+            },
+            web: {
+                name: "WEB 事業部",
+                imageClass: "about-image--web",
+                description: `WEB 事業部では、集客から体験設計、改善運用までを一気通貫で推進し、<br>
+                            事業成長に直結するサイトやサービスをつくっています。<br>
+                            ディレクター・デザイナー・エンジニアが密に連携しながら、<br>
+                            ユーザー視点と事業視点の両方を大切に開発を進めています。<br>
+                            検証と改善を素早く回し、<br>
+                            価値あるアウトプットを継続的に届けています。`
+            },
+            hrtech: {
+                name: "HR Tech 事業部",
+                imageClass: "about-image--hrtech",
+                description: `HR Tech 事業部では、採用や組織課題を解決するプロダクト開発に取り組み、<br>
+                            現場の声を素早く反映できる開発体制を整えています。<br>
+                            要件整理からUI設計、実装、改善までを横断して進めることで、<br>
+                            使いやすさと事業インパクトの両立を目指しています。<br>
+                            チームで知見を共有しながら、<br>
+                            継続的にサービス品質を高めています。`
+            }
+        };
+
+        const setDepartmentTab = (departmentKey) => {
+            const content = departmentContent[departmentKey];
+            if (!content) return;
+
+            departmentTabs.forEach((tab) => {
+                const isActive = tab.dataset.department === departmentKey;
+                tab.classList.toggle("is-active", isActive);
+                tab.setAttribute("aria-selected", String(isActive));
+            });
+
+            departmentAboutName.textContent = content.name;
+            departmentAboutDesc.innerHTML = content.description;
+            departmentAboutImage.className = `about-image ${content.imageClass}`;
+        };
+
+        departmentTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                setDepartmentTab(tab.dataset.department);
+            });
+        });
+
+        setDepartmentTab(document.querySelector(".department-tab.is-active")?.dataset.department || "dx");
     </script>
 </body>
 
