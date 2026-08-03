@@ -522,8 +522,8 @@ small {
     display: grid;
     place-items: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: rgba(255, 255, 255, 0.86);
+    border: 1px solid black;
+    color: black;
 
     transition: .2s;
 }
@@ -730,8 +730,8 @@ small {
     display: grid;
     place-items: center;
 
-    border: 1px solid rgba(255, 255, 255, .35);
-    color: rgba(255, 255, 255, .86);
+    border: 1px solid black;
+    color: black;
     text-decoration: none;
 
     transition: .2s;
@@ -850,7 +850,7 @@ small {
 
 .schedule__pill {
     width: 360px;
-    height: 140px;
+    height: 160px;
     border-radius: 999px;
     background: rgba(255, 255, 255, .9);
 }
@@ -914,6 +914,7 @@ small {
 /* ---------- Part 1: capsule plate + thumbnail ---------- */
 .videoSec {
     padding: 120px 0 120px;
+    padding-bottom: 10px;
 }
 
 /* P1 wrapper */
@@ -1085,9 +1086,20 @@ small {
 
 /* text styles */
 .videoNav__icon {
-    font-size: 26px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 2px;
     opacity: .95;
+}
+
+.videoNav__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .videoNav__en {
